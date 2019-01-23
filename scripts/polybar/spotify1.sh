@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# credits
 # https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 
 main() {

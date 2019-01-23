@@ -1,3 +1,4 @@
+" vim rc file, used by Neovim
 " If vim-plug is not installed, install it
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs

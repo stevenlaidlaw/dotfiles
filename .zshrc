@@ -1,4 +1,5 @@
 export ZSH="/home/steven/.oh-my-zsh"
+
 ZSH_THEME="refined"
 
 ENABLE_CORRECTION="true"
