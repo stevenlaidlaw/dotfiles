@@ -6,16 +6,14 @@
 background = #232323
 foreground = #dfdfdf
 
-color1 = #f44336
-color2 = #e91e63
-color3 = #673ab7
-color4 = #2196f3
-color5 = #00bcd4
-color6 = #4caf50
-color7 = #cddc39
-color8 = #ffc107
-color9 = #ff5722
-color10 = #795548
+color1 = #faa
+color2 = #afa
+color3 = #aaf
+color4 = #ffa
+color5 = #faf
+color6 = #aff
+color7 = #fca
+color8 = #acf
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -39,9 +37,9 @@ module-margin-right = 2
 
 ; font-N = <fontconfig pattern>;<vertical offset>
 font-0 = Roboto:pixelsize=12;0
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;0"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;0"
+font-3 = "Font Awesome 5 Brands:pixelsize=12;0"
 
 modules-left = i3 previous next spotify1
 modules-right = filesystem pulseaudio wlan battery date powermenu
@@ -108,7 +106,7 @@ label-unfocused-padding = 3
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${colors.background}
-label-visible-underline = ${colors.color2}
+label-visible-underline = ${colors.color1}
 label-visible-padding = 3
 
 ; urgent = Workspace with urgency hint set
@@ -126,7 +124,7 @@ format = "%{T3}<label>"
 format-padding = 2
 ; Previous song icon
 exec = echo ""
-format-underline = ${colors.color4}
+format-underline = ${colors.color2}
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
@@ -137,7 +135,7 @@ format = "%{T3}<label>"
 format-padding = 2
 ; Next song icon
 exec = echo ""
-format-underline = ${colors.color4}
+format-underline = ${colors.color2}
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
@@ -150,7 +148,7 @@ interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-padding = 2
-format-underline = ${colors.color4}
+format-underline = ${colors.color2}
 label =  %output:0:150%
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 
@@ -171,7 +169,7 @@ format-unmounted-padding = 2
 type = internal/pulseaudio
 
 format-volume =  <label-volume>
-format-volume-underline = ${colors.color7}
+format-volume-underline = ${colors.color4}
 format-volume-padding = 2
 format-muted =  0%
 format-muted-foreground = #f55
@@ -196,11 +194,11 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging-underline = ${colors.color8}
+format-charging-underline = ${colors.color6}
 format-charging-padding = 2
-format-discharging-underline = ${colors.color8}
+format-discharging-underline = ${colors.color6}
 format-discharging-padding = 2
-format-full-underline = ${colors.color8}
+format-full-underline = ${colors.color6}
 format-full-padding = 2
 label-charging =  %percentage%%
 label-discharging =  %percentage%%
@@ -216,7 +214,7 @@ time = %H:%M:%S
 
 format-padding = 2
 format-prefix = 
-format-underline = ${colors.color6}
+format-underline = ${colors.color7}
 
 label = %date% %time%
 
@@ -226,7 +224,7 @@ type = custom/menu
 expand-right = true
 
 format-padding = 2
-format-underline = ${colors.color9}
+format-underline = ${colors.color8}
 
 label-open = 
 label-close = cancel
