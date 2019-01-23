@@ -1,0 +1,1 @@
+/home/steven/.config/polybar/scripts/spotify1.sh
