@@ -9,6 +9,6 @@ mkdir -p scripts/polybar/
 cp ~/.config/polybar/scripts/* scripts/polybar/
 
 git add .
-git commit -m '`date`'
+git commit -m "`date`"
 git push
 
