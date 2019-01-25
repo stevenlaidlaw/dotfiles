@@ -200,13 +200,20 @@ full-at = 98
 
 format-charging-underline = ${colors.color6}
 format-charging-padding = 2
+format-charging-prefix = " "
+format-charging-prefix-foreground = #afa
+label-charging = %percentage%%
+
 format-discharging-underline = ${colors.color6}
 format-discharging-padding = 2
+format-discharging-prefix = " "
+format-discharging-prefix-foreground = #faa
+label-discharging = %percentage%%
+
 format-full-underline = ${colors.color6}
 format-full-padding = 2
-label-charging =  %percentage%%
-label-discharging =  %percentage%%
-label-full =  %percentage%%
+format-full-prefix = " "
+label-full = %percentage%%
 
 [module/date]
 type = internal/date
