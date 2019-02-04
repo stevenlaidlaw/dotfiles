@@ -15,6 +15,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+unsetopt correct_all
+
 # User configuration
 
 # For a full list of active aliases, run `alias`.
