@@ -1,0 +1,15 @@
+font_family "Fira Code"
+
+tab_bar_style separator
+tab_separator ♦
+active_tab_foreground #232323
+active_tab_background #ccc
+active_tab_font_style normal
+inactive_tab_foreground #ccc
+inactive_tab_background #232323
+inactive_tab_font_style normal
+
+foreground #fff
+background #232323
+
+window_padding_width 8.0
