@@ -232,29 +232,24 @@ label = %date% %time%
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
+expand-right = false
 
 format-padding = 2
 format-underline = ${colors.color8}
 
-label-open = 
-label-close = cancel
+label-open = 
+label-close = 
+label-close-foreground = #f55
 label-separator = "  |  "
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-0-0 = 
+menu-0-0-exec = exec i3lock -i /home/steven/Pictures/backgrounds/msmarvel.png -t -f
+menu-0-1 = 
+menu-0-1-exec = systemctl suspend
+menu-0-2 = 
+menu-0-2-exec = exec poweroff --reboot
+menu-0-3 = 
+menu-0-3-exec = exec poweroff
 
 [settings]
 screenchange-reload = true

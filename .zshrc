@@ -23,6 +23,5 @@ unsetopt correct_all
 alias ll='ls -lah'
 alias please='sudo'
 alias lock='i3lock -i /home/steven/Pictures/backgrounds/msmarvel.png -t -f'
-alias nightnight='sudo sh -c "echo mem > /sys/power/state"'
 alias vi="nvim"
 alias vim="nvim"
