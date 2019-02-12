@@ -151,6 +151,6 @@ for_window [class="^.*"] border pixel 0
 gaps inner 12
 
 # Desktop screenshot
-bindsym --release XF86Tools exec "scrot ~/Pictures/screenshots/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
+bindsym --release XF86Tools exec "scrot ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png -m -e 'xclip -selection c -t image/png < $f'"
 # Selection screenshot
-bindsym --release Shift+XF86Tools exec "scrot ~/Pictures/screenshots/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'"
+bindsym --release Shift+XF86Tools exec "scrot ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png -s -e 'xclip -selection c -t image/png < $f'"

@@ -246,10 +246,12 @@ menu-0-0 = 
 menu-0-0-exec = exec i3lock -i /home/steven/Pictures/backgrounds/msmarvel.png -t -f
 menu-0-1 = 
 menu-0-1-exec = systemctl suspend
-menu-0-2 = 
-menu-0-2-exec = exec poweroff --reboot
-menu-0-3 = 
-menu-0-3-exec = exec poweroff
+menu-0-2 = 
+menu-0-2-exec = exec gnome-session-quit
+menu-0-3 = 
+menu-0-3-exec = exec poweroff --reboot
+menu-0-4 = 
+menu-0-4-exec = exec poweroff
 
 [settings]
 screenchange-reload = true
