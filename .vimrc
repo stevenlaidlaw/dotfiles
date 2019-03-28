@@ -1,11 +1,4 @@
 " vim rc file, used by Neovim
-" If vim-plug is not installed, install it
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
@@ -13,7 +6,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'kaicataldo/material.vim'
 
 " Hardmode (no movement keys)
-Plug 'https://github.com/wikitopian/hardmode.git'
+" Plug 'https://github.com/wikitopian/hardmode.git'
+
+" Intellisense
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+
+Plug 'kien/ctrlp.vim'
 
 " Init plugin system
 call plug#end()

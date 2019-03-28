@@ -1,5 +1,6 @@
 font_family "Fira Code"
 
+tab_bar_edge top
 tab_bar_style fade
 tab_fade 1
 active_tab_foreground #232323

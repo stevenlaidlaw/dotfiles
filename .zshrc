@@ -25,3 +25,7 @@ alias please='sudo'
 alias lock='i3lock -i /home/steven/Pictures/backgrounds/msmarvel.png -t -f'
 alias vi="nvim"
 alias vim="nvim"
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/steven/Projects/simpleMixer/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/steven/Projects/simpleMixer/node_modules/tabtab/.completions/electron-forge.zsh
