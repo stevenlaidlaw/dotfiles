@@ -1,5 +1,5 @@
 font_family "Fira Code"
-font_size 13
+font_size 11
 
 tab_bar_edge top
 tab_bar_style fade
@@ -12,7 +12,5 @@ inactive_tab_background #232323
 inactive_tab_font_style normal
 
 foreground #fff
-background #232323
-background_opacity 0.8
+background #131313
 
-window_padding_width 8.0
