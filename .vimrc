@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'kaicataldo/material.vim'
+Plug 'hzchirs/vim-material'
 Plug 'tomasr/molokai'
 Plug 'wikitopian/hardmode'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -82,8 +82,9 @@ endif
 
 set t_vb=
 
+let g:material_style='oceanic'
 set background=dark
-colorscheme molokai
+colorscheme vim-material
 
 " Hardmode settings
 " Just disable the arrow keys
@@ -98,6 +99,11 @@ let g:NERDTreeIgnore=['\.git$', 'node_modules$']
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 map <C-n> :NERDTreeToggle<CR>
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
