@@ -26,6 +26,8 @@ alias vi="nvim"
 alias vim="nvim"
 alias sb="cd ~/workspace/seqta && ./gradlew build -x test && cd seqta-suite && docker-compose up -d && cd .."
 alias todo="~/Projects/todo.txt_cli/todo.sh"
+alias ccat="/bin/cat"
+alias cat="bat"
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/gopath
