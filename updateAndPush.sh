@@ -9,6 +9,9 @@ cp ~/.config/kitty/kitty.conf kittyConfig
 mkdir -p scripts/polybar/
 cp ~/.config/polybar/scripts/* scripts/polybar/
 
+mkdir -p screenlayout/
+cp ~/.screenlayout/* screenlayout/
+
 git add .
 git commit -m "`date`"
 git push

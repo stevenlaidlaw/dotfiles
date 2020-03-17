@@ -25,10 +25,10 @@ bindsym $win+Shift+q kill
 bindsym $win+d exec dmenu_run
 
 # change focus
-# bindsym $win+j focus left
-# bindsym $win+k focus down
-# bindsym $win+l focus up
-# bindsym $win+semicolon focus right
+# bindsym $win+h focus left
+# bindsym $win+j focus down
+# bindsym $win+k focus up
+# bindsym $win+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $win+Left focus left
@@ -37,10 +37,10 @@ bindsym $win+Up focus up
 bindsym $win+Right focus right
 
 # move focused window
-# bindsym $win+Shift+j move left
-# bindsym $win+Shift+k move down
-# bindsym $win+Shift+l move up
-# bindsym $win+Shift+semicolon move right
+# bindsym $win+Shift+h move left
+# bindsym $win+Shift+j move down
+# bindsym $win+Shift+k move up
+# bindsym $win+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $win+Shift+Left move left
@@ -126,10 +126,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -150,7 +150,6 @@ exec_always --no-startup-id ~/.i3/polybar.sh &
 exec_always --no-startup-id feh --bg-scale ~/Pictures/garyveerules.jpg
 exec --no-startup-id nm-applet
 for_window [class="^.*"] border pixel 0
-# gaps inner 12
 
 # Desktop screenshot
 bindsym --release XF86Tools exec "scrot ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png -m -e 'xclip -selection c -t image/png < $f'"
@@ -161,6 +160,7 @@ bindsym --release Shift+XF86Tools exec "scrot ~/Pictures/screenshots/$(date +%Y-
 bindsym $win+$alt+1 exec "~/.screenlayout/one-monitor.sh"
 bindsym $win+$alt+2 exec "~/.screenlayout/two-monitor.sh"
 bindsym $win+$alt+3 exec "~/.screenlayout/three-monitor.sh"
+bindsym $win+$alt+4 exec "~/.screenlayout/extended-monitor.sh"
 
 # Move workspaces
 bindsym $win+$alt+Up move workspace to output up
