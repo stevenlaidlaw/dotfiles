@@ -82,14 +82,13 @@ endif
 
 set t_vb=
 
-let g:material_style='oceanic'
 set background=dark
-colorscheme vim-material
+colorscheme monokai
 
 " Hardmode settings
 " Just disable the arrow keys
-let g:HardMode_level = 'wannabe'
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" let g:HardMode_level = 'wannabe'
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " CtrlP settings
 nnoremap <silent> <C-p> :Files<CR>
