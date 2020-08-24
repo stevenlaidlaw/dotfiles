@@ -1,14 +1,5 @@
-" vim rc file, used by Neovim
-
 set nocompatible
 filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'rudes/vim-java'
-call vundle#end()
-filetype plugin indent on
-
 
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
@@ -26,7 +17,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 
-" Init plugin system
 call plug#end()
 
 set number
@@ -83,7 +73,7 @@ endif
 set t_vb=
 
 set background=dark
-colorscheme monokai
+colorscheme molokai
 
 " Hardmode settings
 " Just disable the arrow keys
@@ -114,5 +104,3 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
-
-

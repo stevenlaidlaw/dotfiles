@@ -16,7 +16,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $win
 
 # start a terminal
-bindsym $win+Return exec kitty
+bindsym $win+Return exec gnome-terminal
 
 # kill focused window
 bindsym $win+Shift+q kill
@@ -148,19 +148,19 @@ bindsym $win+r mode "resize"
 exec_always --no-startup-id ~/.i3/polybar.sh &
 # exec_always --no-startup-id feh --bg-scale --randomize ~/Pictures/backgrounds/elite/*
 exec_always --no-startup-id feh --bg-scale ~/Pictures/garyveerules.jpg
+exec_always --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 for_window [class="^.*"] border pixel 0
+
+bar {
+        status_command i3status
+        position top
+}
 
 # Desktop screenshot
 bindsym --release XF86Tools exec "scrot ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png -m -e 'xclip -selection c -t image/png < $f'"
 # Selection screenshot
 bindsym --release Shift+XF86Tools exec "scrot ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png -s -e 'xclip -selection c -t image/png < $f'"
-
-# Monitor layouts
-bindsym $win+$alt+1 exec "~/.screenlayout/one-monitor.sh"
-bindsym $win+$alt+2 exec "~/.screenlayout/two-monitor.sh"
-bindsym $win+$alt+3 exec "~/.screenlayout/three-monitor.sh"
-bindsym $win+$alt+4 exec "~/.screenlayout/extended-monitor.sh"
 
 # Move workspaces
 bindsym $win+$alt+Up move workspace to output up
