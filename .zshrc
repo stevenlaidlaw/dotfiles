@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/eselle/.oh-my-zsh"
+export ZSH="/Users/steven/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +68,7 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git rails ruby osx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,11 +89,24 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
+eval "$(rbenv init -)"
+
+alias vi='echo "Running nvim" && nvim'
+alias vim='echo "Running nvim" && nvim'
+alias python='/usr/local/bin/python3'
+alias pip='/usr/local/bin/pip3'
+alias ws='cd ~/workspace/website && RAILS_ENV=development source ~/workspace/website/config/settings/boot.sh ~/workspace/website'
+alias e-au='export AGW_region=au'
+alias e-us='export AGW_region=us'
+alias e-nz='export AGW_region=nz'
+alias be='bundle exec'
+alias ag='be rails s'
+alias agau='ws && e-au && ag'
+alias agus='ws && e-us && ag'
+alias agnz='ws && e-nz && ag'
+alias ret='RAILS_ENV=test'
+alias agt='ws && ret be rspec'
