@@ -3,29 +3,29 @@
 function get_region_and_rails_env() {
   if [[ "$PWD" =~ "workspace/website" ]]; then
     if [ "$RAILS_ENV" = "" ]; then
-      rails_env_tmp=dev
+      rails_env="%{$fg[magenta]%}E:%{$fg[yellow]%}DEV"
     else
-      rails_env_tmp=$RAILS_ENV
+      rails_env="%{$fg[magenta]%}E:%{$fg[yellow]%}$RAILS_ENV:u"
+    fi
+
+    if [[ "$AGW_region" = "" ]]; then
+      region="%{$fg[magenta]%}R:%{$fg[yellow]%}AU"
+    else
+      region="%{$fg[magenta]%}R:%{$fg[yellow]%}$AGW_region:u"
     fi
 
     if [[ -v "$AGW_database_name" ]]; then
-      append_db_name_tmp=":$AGW_database_name"
+      db=" %{$fg[magenta]%}D:%{$fg[yellow]%}$AGW_database_name"
     fi
 
-    if [[ "$AGW_region" = "" || "$AGW_region" = "au" ]]; then
-      region_tmp="au"
-    else
-      region_tmp="**$AGW_region:u**" # the :u converts the $AGW_region to uppercase in ZSH
-    fi
-
-    echo "%{$fg[yellow]%} | $region_tmp:$rails_env_tmp$append_db_name_tmp%{$reset_color%}"
+    echo " $rails_env $region$db%{$reset_color%}"
   else
     return
   fi
 }
 
 # Must use Powerline font, for \uE0A0 to render.
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[blue]%}\uE0A0 "
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[green]%}\uE0A0 "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}?"
@@ -35,7 +35,7 @@ ZSH_THEME_RUBY_PROMPT_PREFIX="%{$fg_bold[red]%}‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
 
 PROMPT='
-%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)$(get_region_and_rails_env)
+%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info)$(get_region_and_rails_env)
 $ '
 
 RPROMPT='$(ruby_prompt_info)'
