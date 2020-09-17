@@ -27,8 +27,8 @@ function get_region_and_rails_env() {
 # Must use Powerline font, for \uE0A0 to render.
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[green]%}\uE0A0 "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}?"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!!!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}???"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 ZSH_THEME_RUBY_PROMPT_PREFIX="%{$fg_bold[red]%}‹"
