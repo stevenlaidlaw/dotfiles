@@ -44,9 +44,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_RUBY_PROMPT_PREFIX="%{%B$FG[009]%}‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
 
+# Left prompt
 PROMPT='
 %{%B$FG[012]%}%~%{$reset_color%}$(get_region_and_rails_env)$(my_git_prompt_info)
 %% '
+# ∑∆∞§¶
 
+# Right prompt
 RPROMPT='$(ruby_prompt_info)'
 
