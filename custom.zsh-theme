@@ -3,7 +3,7 @@
 function get_region_and_rails_env() {
   if [[ "$PWD" =~ "workspace/website" ]]; then
     if [ "$RAILS_ENV" = "" ]; then
-      rails_env="DEV"
+      rails_env="DEVELOPMENT"
     else
       rails_env="$RAILS_ENV:u"
     fi
