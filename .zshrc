@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"x
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
@@ -104,10 +104,18 @@ alias e-au='export AGW_region=au'
 alias e-us='export AGW_region=us'
 alias e-nz='export AGW_region=nz'
 alias be='bundle exec'
-alias ag='be foreman start'
+alias ag='be rails s'
+alias agc='be rails c'
+alias agworker='be foreman start'
 alias agau='ws && e-au && ag'
 alias agus='ws && e-us && ag'
 alias agnz='ws && e-nz && ag'
+alias agcau='ws && e-au && agc'
+alias agcus='ws && e-us && agc'
+alias agcnz='ws && e-nz && agc'
 alias ret='RAILS_ENV=test'
 alias agt='ws && ret be rspec'
 alias noise='play -n synth brownnoise synth pinknoise mix synth 0 0 0 10 10 40 trapezium amod 0.1 30'
+alias alarmnoise='play -n synth 0.04 sin 400 fade l 0 2 1 trim 0 0.11 repeat 2'
+alias alarmsleep='alarmnoise;sleep 0.9;'
+alias alarm='for i in {1..1000}; do alarmsleep; done'
