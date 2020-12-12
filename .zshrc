@@ -92,7 +92,6 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"x
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 eval "$(rbenv init -)"
 
 alias vi='echo "Running nvim" && nvim'
@@ -124,6 +123,8 @@ alias agwca='ws && e-ca && agw'
 alias agcompile='ws && e-au && be rails assets:precompile'
 alias ret='RAILS_ENV=test'
 alias agt='ws && ret be rspec'
+alias docsplit='cd ~/workspace/docsplit-server && be rackup -p 9393'
+alias calcengine='be thor calculation_daemon:all_the_things standalone'
 alias noise='play -n synth brownnoise synth pinknoise mix synth 0 0 0 10 10 40 trapezium amod 0.1 30'
 alias alarmnoise='play -n synth 0.04 sin 400 fade l 0 2 1 trim 0 0.11 repeat 2'
 alias alarmsleep='alarmnoise;sleep 0.9;'

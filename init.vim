@@ -81,7 +81,8 @@ endif
 set t_vb=
 
 set background=dark
-colorscheme molokai
+" colorscheme molokai
+colorscheme "Monokai Soda"
 
 " Hardmode settings
 " Just disable the arrow keys
