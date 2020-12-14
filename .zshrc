@@ -94,10 +94,16 @@ export NVM_DIR="$HOME/.nvm"x
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 eval "$(rbenv init -)"
 
-alias vi='echo "Running nvim" && nvim'
-alias vim='echo "Running nvim" && nvim'
+# PROGRAMS
+alias vi='nvim'
+alias vim='nvim'
 alias python='/usr/local/bin/python3'
 alias pip='/usr/local/bin/pip3'
+alias mutt='neomutt'
+# alias cat='bat'
+# alias ccat='/usr/bin/cat'
+
+# AGWORLD
 alias ws='cd ~/workspace/website && RAILS_ENV=development source ~/workspace/website/config/settings/boot.sh ~/workspace/website'
 alias e-au='export AGW_region=au'
 alias e-us='export AGW_region=us'
@@ -125,6 +131,8 @@ alias ret='RAILS_ENV=test'
 alias agt='ws && ret be rspec'
 alias docsplit='cd ~/workspace/docsplit-server && be rackup -p 9393'
 alias calcengine='be thor calculation_daemon:all_the_things standalone'
+
+# FUN
 alias noise='play -n synth brownnoise synth pinknoise mix synth 0 0 0 10 10 40 trapezium amod 0.1 30'
 alias alarmnoise='play -n synth 0.04 sin 400 fade l 0 2 1 trim 0 0.11 repeat 2'
 alias alarmsleep='alarmnoise;sleep 0.9;'

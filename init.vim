@@ -31,7 +31,6 @@ set number
 set linebreak
 set textwidth=100
 set showmatch
-set virtualedit=all
 set visualbell
 
 set hlsearch
@@ -81,13 +80,12 @@ endif
 set t_vb=
 
 set background=dark
-" colorscheme molokai
-colorscheme "Monokai Soda"
+colorscheme molokai
 
 " Hardmode settings
 " Just disable the arrow keys
-" let g:HardMode_level = 'wannabe'
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:HardMode_level = 'wannabe'
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " FZF settings (ctrl+p shortcut)
 nnoremap <silent> <C-p> :Files<CR>
