@@ -10,6 +10,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 " Theme
 Plug 'tomasr/molokai'
+" Material theme
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Intellisense engine from VSCode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Shows git status of lines of code
@@ -23,13 +25,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 " Decent icons for files. Get the nerdfont here: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
 Plug 'ryanoasis/vim-devicons'
+" Ack integration (override by Ag in settings)
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
 set mouse=a
 set number
 set linebreak
-set textwidth=100
 set showmatch
 set visualbell
 
@@ -80,7 +83,9 @@ endif
 set t_vb=
 
 set background=dark
-colorscheme molokai
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker'
+colorscheme material
 
 " Hardmode settings
 " Just disable the arrow keys
@@ -105,6 +110,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Use Ag instead of Ack
+" let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --vimgrep'
+
+" Some common misspellings
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -115,3 +125,8 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+
+" Zettelkasten
+let g:zettelkasten = "~/workspace/notes/Knowledge/"
+command! -nargs=1 NewZettel :execute ":e" zettelkasten . strftime("%Y%m%d%H%M%S"). " <args>.md"
+

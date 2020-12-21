@@ -9,6 +9,7 @@
 - [.tmux](https://github.com/gpakosz/.tmux) - tmux helper
 - [nvim](https://neovim.io/) - Code editor
 - [tldr](https://github.com/tldr-pages/tldr) - Simplified man pages
+- [bat](https://github.com/sharkdp/bat) - A cat variant
 - [ag](https://github.com/ggreer/the_silver_searcher) - Ack/Grep replacement
 - [Brave](https://brave.com/) - Web Browser
 
@@ -22,5 +23,5 @@
 2. Install the above applications
 3. Copy dotfiles to appropriate locations
 4. Run `PlugInstall` inside nvim
-
+5. Install Nerd Font Fira Code font variant
 

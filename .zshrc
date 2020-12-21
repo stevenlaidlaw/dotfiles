@@ -92,6 +92,9 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"x
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
 eval "$(rbenv init -)"
 
 # PROGRAMS
@@ -99,9 +102,9 @@ alias vi='nvim'
 alias vim='nvim'
 alias python='/usr/local/bin/python3'
 alias pip='/usr/local/bin/pip3'
-alias mutt='neomutt'
-# alias cat='bat'
-# alias ccat='/usr/bin/cat'
+
+# Helpers
+alias pushall='git add . && git commit -m "`date`" && git push'
 
 # AGWORLD
 alias ws='cd ~/workspace/website && RAILS_ENV=development source ~/workspace/website/config/settings/boot.sh ~/workspace/website'
@@ -110,14 +113,14 @@ alias e-us='export AGW_region=us'
 alias e-nz='export AGW_region=nz'
 alias e-ca='export AGW_region=ca'
 alias be='bundle exec'
-alias ag='be rails s'
+alias ags='be rails s'
 alias agc='be rails c'
 alias agw='be rails jobs:work'
 alias agboth='be foreman start'
-alias agau='ws && e-au && ag'
-alias agus='ws && e-us && ag'
-alias agnz='ws && e-nz && ag'
-alias agca='ws && e-ca && ag'
+alias agau='ws && e-au && ags'
+alias agus='ws && e-us && ags'
+alias agnz='ws && e-nz && ags'
+alias agca='ws && e-ca && ags'
 alias agcau='ws && e-au && agc'
 alias agcus='ws && e-us && agc'
 alias agcnz='ws && e-nz && agc'
@@ -137,4 +140,5 @@ alias noise='play -n synth brownnoise synth pinknoise mix synth 0 0 0 10 10 40 t
 alias alarmnoise='play -n synth 0.04 sin 400 fade l 0 2 1 trim 0 0.11 repeat 2'
 alias alarmsleep='alarmnoise;sleep 0.9;'
 alias alarm='for i in {1..1000}; do alarmsleep; done'
-alias pushall='git add . && git commit -m "`date`" && git push'
+alias please='sudo'
+
