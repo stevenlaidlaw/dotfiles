@@ -39,6 +39,6 @@ colors:
 font:
   normal:
     family: 'FiraCode Nerd Font'
-  size: 14
+  size: 13
 
 background_opacity: 0.9

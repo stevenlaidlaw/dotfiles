@@ -8,8 +8,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 " Better status and tab lines
 Plug 'vim-airline/vim-airline'
-" Theme
-Plug 'tomasr/molokai'
+" Molokai Theme
+" Plug 'tomasr/molokai'
 " Material theme
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Intellisense engine from VSCode
@@ -87,11 +87,6 @@ let g:material_terminal_italics = 1
 let g:material_theme_style = 'darker'
 colorscheme material
 
-" Hardmode settings
-" Just disable the arrow keys
-let g:HardMode_level = 'wannabe'
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
 " FZF settings (ctrl+p shortcut)
 nnoremap <silent> <C-p> :Files<CR>
 
@@ -107,8 +102,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " If no file is opened at startup open NerdTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Use Ag instead of Ack
 " let g:ackprg = 'ag --nogroup --nocolor --column'
