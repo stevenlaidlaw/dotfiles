@@ -88,7 +88,7 @@ let g:material_theme_style = 'darker'
 colorscheme material
 
 " FZF settings (ctrl+p shortcut)
-nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-p> :GitFiles<CR>
 
 " NERDTree Settings (ctrl+n shortcut)
 let g:NERDTreeIgnore=['\.git$', 'node_modules$']
