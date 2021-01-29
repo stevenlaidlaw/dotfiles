@@ -35,7 +35,7 @@ function get_aws_vault_and_region() {
   if [[ "$AWS_VAULT" = "" ]]; then
     return
   else
-    echo " %{$FG[014]%}$AWS_VAULT | $AWS_REGION"
+    echo " %{$FG[006]%}$AWS_VAULT | $AWS_REGION"
   fi
 }
 
