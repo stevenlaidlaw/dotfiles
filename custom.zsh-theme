@@ -1,29 +1,3 @@
-# vim:ft=zsh ts=2 sw=2 sts=2
-
-function get_region_and_rails_env() {
-  if [[ "$PWD" =~ "workspace/website" ]]; then
-    if [ "$RAILS_ENV" = "" ]; then
-      rails_env="DEVELOPMENT"
-    else
-      rails_env="$RAILS_ENV:u"
-    fi
-
-    if [[ "$AGW_region" = "" ]]; then
-      region=":AU"
-    else
-      region=":$AGW_region:u"
-    fi
-
-    if [[ -v "$AGW_database_name" ]]; then
-      db=":$AGW_database_name"
-    fi
-
-    echo " %{$FG[013]%}$rails_env$region$db%{$reset_color%}"
-  else
-    return
-  fi
-}
-
 function my_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   GIT_STATUS=$(git_prompt_status)
@@ -39,6 +13,15 @@ function get_aws_vault_and_region() {
   fi
 }
 
+function get_aws_profile() {
+  PREFIX="%{$FG[006]%}aws"
+  if [[ "$AWS_PROFILE" = "" ]]; then
+    echo "$PREFIX:default"
+  else
+    echo "$PREFIX:$AWS_PROFILE"
+  fi
+}
+
 # Must use Powerline font, for \uE0A0 to render.
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{%B$FG[010]%}\uE0A0 "
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
@@ -48,15 +31,12 @@ ZSH_THEME_GIT_PROMPT_RENAMED="~"
 ZSH_THEME_GIT_PROMPT_DELETED="!"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-ZSH_THEME_RUBY_PROMPT_PREFIX="%{%B$FG[009]%}‹"
-ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
-
 # Left prompt
 PROMPT='
-%{%B$FG[012]%}%~%{$reset_color%}$(get_region_and_rails_env)$(my_git_prompt_info)$(get_aws_vault_and_region)%{$reset_color%}
+%{%B$FG[012]%}%~%{$reset_color%}$(my_git_prompt_info)%{$reset_color%}
 %% '
 # ∑∆∞§¶
 
 # Right prompt
-RPROMPT='$(ruby_prompt_info)'
+RPROMPT='$(get_aws_profile)'
 
