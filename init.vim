@@ -121,6 +121,9 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+
+
 " Zettelkasten
 let g:zettelkasten = "~/workspace/notes/Knowledge/"
 command! -nargs=1 NewZettel :execute ":e" zettelkasten . strftime("%Y%m%d%H%M%S"). " <args>.md"
