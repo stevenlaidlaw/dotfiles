@@ -38,5 +38,5 @@ PROMPT='
 # ∑∆∞§¶
 
 # Right prompt
-RPROMPT='$(get_aws_profile)'
+RPROMPT='$(get_aws_profile)%{$reset_color%}'
 

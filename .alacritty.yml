@@ -3,8 +3,8 @@
 
 window:
   padding:
-    x: 0
-    y: 0
+    x: 8
+    y: 8
   startup_mode: Maximized
 
 # Colors (Material Theme)
@@ -39,6 +39,6 @@ colors:
 font:
   normal:
     family: 'FiraCode Nerd Font'
-  size: 13
+  size: 10
 
-background_opacity: 0.9
+background_opacity: 0.95

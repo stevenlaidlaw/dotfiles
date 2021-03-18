@@ -1,12 +1,8 @@
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="/home/steven/.oh-my-zsh"
 
 ZSH_THEME="custom"
 DISABLE_UPDATE_PROMPT="true"
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -17,27 +13,21 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-export NVM_DIR="$HOME/.nvm"x
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # PROGRAMS
 alias vi='nvim'
 alias vim='nvim'
 alias python='/usr/local/bin/python3'
 alias pip='/usr/local/bin/pip3'
+alias bat='batcat'
 
 # Helpers
 alias pushall='git add . && git commit -m "`date`" && git push'
 
-# FUN
-alias noise='play -n synth brownnoise synth pinknoise mix synth 0 0 0 10 10 40 trapezium amod 0.1 30'
-alias alarmnoise='play -n synth 0.04 sin 400 fade l 0 2 1 trim 0 0.11 repeat 2'
-alias alarmsleep='alarmnoise;sleep 0.9;'
-alias alarm='for i in {1..1000}; do alarmsleep; done'
-alias please='sudo'
-
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
