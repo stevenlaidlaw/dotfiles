@@ -4,7 +4,7 @@
 
 - [i3-gaps](https://github.com/Airblader/i3) - Window manager
 - [rofi](https://github.com/davatorium/rofi) - Application launcher
-- [Alacritty](https://github.com/alacritty/alacritty) - Terminal emulator
+- [Kitty](https://sw.kovidgoyal.net/kitty) - Terminal emulator
 - [zsh](https://www.zsh.org/) - shell
 - [oh-my-zsh](https://ohmyz.sh/) - zsh helper
 - [nvim](https://neovim.io/) - Code editor
