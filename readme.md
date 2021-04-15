@@ -2,11 +2,11 @@
 
 ## Applications
 
-- [i3](https://i3wm.org/) - Window manager
-- [Alacritty](https://github.com/alacritty/alacritty) - Terminal Emulator
+- [i3-gaps](https://github.com/Airblader/i3) - Window manager
+- [rofi](https://github.com/davatorium/rofi) - Application launcher
+- [Alacritty](https://github.com/alacritty/alacritty) - Terminal emulator
 - [zsh](https://www.zsh.org/) - shell
 - [oh-my-zsh](https://ohmyz.sh/) - zsh helper
-- [.tmux](https://github.com/gpakosz/.tmux) - tmux helper
 - [nvim](https://neovim.io/) - Code editor
 - [tldr](https://github.com/tldr-pages/tldr) - Simplified man pages
 - [bat](https://github.com/sharkdp/bat) - A cat variant
@@ -16,6 +16,7 @@
 ### Optional
 
 - [Typora](https://typora.io/) - Markdown editor
+- [.tmux](https://github.com/gpakosz/.tmux) - tmux helper
 
 ## Steps
 
