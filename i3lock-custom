@@ -4,19 +4,20 @@ IMAGE=/tmp/lockscreen.png
 TEXT=/tmp/locktext.png
 
 scrot -z $IMAGE
-convert $IMAGE -blur 0x12 -colorize 25% $IMAGE
-#[ -f $TEXT ] || {
-	#convert \
-		#-size 1920x80 xc:white \
-		#-font Fira-Code-Light-Nerd-Font-Complete \
-		#-pointsize 26 \
-		#-fill black \
-		#-gravity center \
-		#-annotate +0+0 \
+convert $IMAGE -blur 0x48 -colorize 5% $IMAGE
+[ -f $TEXT ] || {
+	convert \
+		-size 280x150 xc:cornflowerblue \
+		-font Fira-Code-Light-Nerd-Font-Complete \
+		-pointsize 38 \
+		-fill white \
+		-gravity center \
+		-annotate +0+0 \
+		"locked" $TEXT;
 		#"locked $(date)" $TEXT;
-	#convert $TEXT -alpha set -channel A -evaluate set 50% $TEXT;
-#}
-# convert $IMAGE $TEXT -geometry +0+500 -composite $IMAGE
+	convert $TEXT -alpha set -channel A -evaluate set 80% $TEXT;
+}
+convert $IMAGE $TEXT -geometry +700+450 -composite $IMAGE
 i3lock -i $IMAGE
 rm /tmp/lockscreen.png
 rm /tmp/locktext.png
