@@ -153,9 +153,7 @@ mode "resize" {
 
 bindsym $win+r mode "resize"
 
-# exec_always --no-startup-id feh --bg-scale --randomize ~/Pictures/backgrounds/elite/*
-exec_always --no-startup-id feh --bg-fill ~/Pictures/01.png
-exec_always --no-startup-id volumeicon
+exec_always --no-startup-id feh --bg-fill ~/Pictures/background.png
 
 exec --no-startup-id nm-applet
 exec --no-startup-id kitty
