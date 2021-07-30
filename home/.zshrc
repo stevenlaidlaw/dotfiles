@@ -17,17 +17,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PATH=$PATH:/usr/local/go/bin
+
 # User configuration
 
 # PROGRAMS
 alias vi='nvim'
 alias vim='nvim'
-alias python='/usr/local/bin/python3'
-alias pip='/usr/local/bin/pip3'
 alias bat='batcat'
 
 # Helpers
 alias pushall='git add . && git commit -m "`date`" && git push'
-
-# Added by Amplify CLI binary installer
-export PATH="$HOME/.amplify/bin:$PATH"

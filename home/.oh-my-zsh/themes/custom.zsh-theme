@@ -14,12 +14,9 @@ function get_aws_vault_and_region() {
 }
 
 function get_aws_profile() {
-  PREFIX="%{$FG[006]%}aws"
-  if [[ "$AWS_PROFILE" = "" ]]; then
-    echo "$PREFIX:default"
-  else
-    echo "$PREFIX:$AWS_PROFILE"
-  fi
+  C1="%{$FG[005]%}"
+  C2="%{$FG[005]%}"
+  echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
 }
 
 # Must use Powerline font, for \uE0A0 to render.

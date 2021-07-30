@@ -18,7 +18,12 @@ convert $IMAGE -blur 0x48 -colorize 5% $IMAGE
 	convert $TEXT -alpha set -channel A -evaluate set 80% $TEXT;
 }
 convert $IMAGE $TEXT -geometry +700+450 -composite $IMAGE
-i3lock -i $IMAGE
+
+set -e
+xset s off dpms 0 10 0
+i3lock -i $IMAGE --ignore-empty-password
+xset s off -dpms
+
 rm /tmp/lockscreen.png
 rm /tmp/locktext.png
 

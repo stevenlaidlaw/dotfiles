@@ -89,11 +89,12 @@ colorscheme material
 
 " FZF settings (ctrl+p shortcut)
 nnoremap <silent> <C-p> :GitFiles<CR>
+nnoremap <silent> <C-n> :Files<CR>
 
 " NERDTree Settings (ctrl+n shortcut)
 let g:NERDTreeIgnore=['\.git$', 'node_modules$']
 nnoremap <silent> <F2> :NERDTreeFind<CR>
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -122,9 +123,4 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-
-
-" Zettelkasten
-let g:zettelkasten = "~/workspace/notes/Knowledge/"
-command! -nargs=1 NewZettel :execute ":e" zettelkasten . strftime("%Y%m%d%H%M%S"). " <args>.md"
 
