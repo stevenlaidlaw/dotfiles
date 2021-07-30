@@ -84,7 +84,7 @@ set t_vb=
 
 set background=dark
 let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker'
+let g:material_theme_style = 'ocean-community'
 colorscheme material
 
 " FZF settings (ctrl+p shortcut)
