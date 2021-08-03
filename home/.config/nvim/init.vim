@@ -9,7 +9,7 @@ Plug 'scrooloose/nerdtree'
 " Better status and tab lines
 Plug 'vim-airline/vim-airline'
 " Molokai Theme
-" Plug 'tomasr/molokai'
+Plug 'tomasr/molokai'
 " Material theme
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Intellisense engine from VSCode

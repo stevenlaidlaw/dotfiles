@@ -13,10 +13,11 @@ background = #000f1624
 background-alt = #FF514882
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
-primary = #514882
+foreground-alt = #AFA198F2
+primary = #AFA198F2
+;primary = #514882
 secondary = #2b283e
-alert = #bd2c40
+alert = #AAcd4c60
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -51,8 +52,8 @@ font-5 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-6 = "Font Awesome 5 Brands:style=Regular:size=10;1"
 
 modules-left = i3
-modules-center = mpd
-modules-right = pulseaudio memory cpu wlan battery date powermenu
+modules-center = 
+modules-right = spotify pulseaudio memory cpu wlan battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -233,15 +234,15 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging-prefix = " "
+format-charging-prefix = "  "
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging-prefix = " "
+format-discharging-prefix = "  "
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = "  "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -295,6 +296,18 @@ menu-0-1-exec = sudo poweroff
 ;menu-2-0-exec = sudo poweroff
 ;menu-2-1 = 
 ;menu-2-1-exec = menu-open-0
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python3 ~/.config/polybar/spotify.py -f '{artist}: {song}'
+format-underline = #1db954
+;control players (optional)
+click-left = playerctl --player=spotify play-pause
+click-right = playerctl --player=spotify next
+click-middle = playerctl --player=spotify previous
 
 [settings]
 screenchange-reload = true

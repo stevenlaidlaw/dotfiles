@@ -216,7 +216,7 @@ bindsym XF86AudioPrev exec playerctl previous
 gaps inner 8
 
 # System commands
-bindsym $win+Shift+x exec --no-startup-id sleep 1 && xset dpms force suspend
+bindsym $win+Shift+x exec --no-startup-id "~/.config/i3/scripts/i3lock-custom"
 bindsym $win+$alt+Shift+k exec "systemctl suspend"
 
 
