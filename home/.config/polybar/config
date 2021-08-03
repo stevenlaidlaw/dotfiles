@@ -205,18 +205,20 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
-label-volume-foreground = ${colors.foreground-alt}
+format-volume-prefix = " "
+format-volume-foreground = ${colors.primary}
+label-volume = %percentage%%
+label-volume-foreground = ${colors.foreground}
 
 label-muted =  0%
 label-muted-foreground = ${colors.foreground-alt}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
@@ -226,7 +228,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = #33FFFFFF
 
 [module/battery]
 type = internal/battery
