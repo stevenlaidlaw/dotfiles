@@ -163,17 +163,18 @@ exec --no-startup-id spotify
 exec --no-startup-id signal-desktop
 
 # Turn on compositing manager for shadows and transparency
-exec_always --no-startup-id xcompmgr -c
+exec_always --no-startup-id xcompmgr -c -o 0
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id xss-lock -- ~/.config/i3/scripts/i3lock-custom
 
 for_window [class="^.*"] border pixel 1
+gaps inner 8
 
 set $bgColor #0f1624
-set $activeColor #514882
-set $inactiveColor #2b283e
+set $activeColor #9c64fe
+set $inactiveColor #4c348e
 
 # Window colors - border - bg - text - indicator
 client.focused #FF0000 $activeColor #0000FF #888888
@@ -212,8 +213,6 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-gaps inner 8
 
 # System commands
 bindsym $win+Shift+x exec --no-startup-id "~/.config/i3/scripts/i3lock-custom"

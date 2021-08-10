@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 " Molokai Theme
 Plug 'tomasr/molokai'
+Plug 'RobertYan/monokai-soda'
 " Material theme
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Intellisense engine from VSCode
@@ -55,7 +56,7 @@ set undolevels=1000
 set backspace=indent,eol,start
 
 set hidden
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
