@@ -20,7 +20,7 @@ secondary = #2b283e
 alert = #AAcd4c60
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 ;height = 32
 ;offset-x = 1%
