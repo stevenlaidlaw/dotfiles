@@ -22,8 +22,8 @@ bindsym $win+Return exec kitty
 bindsym $win+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $win+d exec rofi -show run -lines 5 -eh 1 -width 50 -font "System San Francisco Display 22"
-
+# bindsym $win+d exec rofi -show run -lines 5 -eh 1 -width 50 -font "System San Francisco Display 22"
+bindsym $win+d exec dmenu_run
 
 # change focus
 bindsym $win+h focus left
@@ -31,23 +31,11 @@ bindsym $win+j focus down
 bindsym $win+k focus up
 bindsym $win+l focus right
 
-# alternatively, you can use the cursor keys:
-# bindsym $win+Left focus left
-# bindsym $win+Down focus down
-# bindsym $win+Up focus up
-# bindsym $win+Right focus right
-
 # move focused window
 bindsym $win+Shift+h move left
 bindsym $win+Shift+j move down
 bindsym $win+Shift+k move up
 bindsym $win+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-# bindsym $win+Shift+Left move left
-# bindsym $win+Shift+Down move down
-# bindsym $win+Shift+Up move up
-# bindsym $win+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $win+$alt+h split h
@@ -111,6 +99,12 @@ bindsym $win+Shift+7 move container to workspace $ws7
 bindsym $win+Shift+8 move container to workspace $ws8
 bindsym $win+Shift+9 move container to workspace $ws9
 bindsym $win+Shift+0 move container to workspace $ws10
+
+# move focused workspace between monitors
+bindsym $win+Ctrl+l move workspace to output right
+bindsym $win+Ctrl+h move workspace to output left
+bindsym $win+Ctrl+k move workspace to output up
+bindsym $win+Ctrl+j move workspace to output down
 
 # assign [class="kitty"] $ws1
 assign [class="Code"] $ws2
