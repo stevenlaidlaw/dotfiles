@@ -28,4 +28,4 @@ alias bat='batcat'
 
 # Helpers
 alias pushall='git add . && git commit -m "`date`" && git push'
-alias run='docker run -it --rm -u $(id -u ${USER}):$(id -g ${USER}) -v "$PWD:$PWD" -w "$PWD"'
+alias run='docker run -it --rm -u $(id -u ${USER}):$(id -g ${USER}) -v "/home/steven/:/home/steven/" -w "$PWD"'
