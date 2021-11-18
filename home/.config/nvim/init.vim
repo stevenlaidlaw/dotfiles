@@ -13,6 +13,8 @@ Plug 'tomasr/molokai'
 Plug 'RobertYan/monokai-soda'
 " Material theme
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Dracula theme
+Plug 'dracula/vim', { 'as': 'dracula' }
 " Intellisense engine from VSCode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Shows git status of lines of code
@@ -81,12 +83,14 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+syntax enable
+
 set t_vb=
 
 set background=dark
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean-community'
-colorscheme material
+colorscheme dracula
 
 " FZF settings (ctrl+p shortcut)
 nnoremap <silent> <C-p> :GitFiles<CR>
