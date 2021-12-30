@@ -21,6 +21,8 @@ export PATH=$PATH:/usr/local/go/bin
 
 # User configuration
 
+alias ll='ls -lah'
+
 # PROGRAMS
 alias vi='nvim'
 alias vim='nvim'

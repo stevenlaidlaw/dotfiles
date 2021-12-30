@@ -6,17 +6,17 @@ function my_git_prompt_info() {
 }
 
 function get_aws_vault_and_region() {
-  if [[ "$AWS_VAULT" = "" ]]; then
-    return
-  else
-    echo " %{$FG[006]%}$AWS_VAULT | $AWS_REGION"
-  fi
+  # if [[ "$AWS_VAULT" = "" ]]; then
+  #   return
+  # else
+  #   echo " %{$FG[006]%}$AWS_VAULT | $AWS_REGION"
+  # fi
 }
 
 function get_aws_profile() {
-  C1="%{$FG[005]%}"
-  C2="%{$FG[005]%}"
-  echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
+  # C1="%{$FG[005]%}"
+  # C2="%{$FG[005]%}"
+  # echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
 }
 
 # Must use Powerline font, for \uE0A0 to render.
