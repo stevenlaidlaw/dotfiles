@@ -19,6 +19,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/usr/local/go/bin
 
+eval "$(rbenv init -)"
+
 # User configuration
 
 alias ll='ls -lah'
