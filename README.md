@@ -12,6 +12,9 @@
 - [ag](https://github.com/ggreer/the_silver_searcher) - Ack/Grep replacement
 - [firefox](https://firefox.com/) - Web Browser
 - [ghostwriter](https://wereturtle.github.io/ghostwriter/) - Minimal markdown editor
+- [nvm](https://github.com/nvm-sh/nvm) - Node version manager
+- [docker](https://docs.docker.com/engine/install/ubuntu/) - Containers
+- [ZSH autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) - FISH-like autosuggestions
 
 ## Steps
 
@@ -19,6 +22,4 @@
 2. Install the above applications
 3. rsync the `home` folder into your home directory
 4. Run `PlugInstall` inside nvim
-5. Install [ZSH autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
-6. Install Docker
-
+5. Set your default node version to latest
