@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/steven/.oh-my-zsh"
+export ZSH="/home/stevenlaidlaw/.oh-my-zsh"
 
 ZSH_THEME="custom"
 DISABLE_UPDATE_PROMPT="true"
@@ -18,8 +18,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=$PATH:/usr/local/go/bin
-
-eval "$(rbenv init -)"
 
 # User configuration
 
