@@ -12,12 +12,13 @@ DISABLE_UPDATE_PROMPT="true"
 plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+source "/etc/profile.d/rvm.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/$home/.gem/bin
 
 # User configuration
 
@@ -31,3 +32,5 @@ alias bat='batcat'
 # Helpers
 alias pushall='git add . && git commit -m "`date`" && git push'
 alias run='docker run -it --rm -u $(id -u ${USER}):$(id -g ${USER}) -v "/home/steven/:/home/steven/" -w "$PWD"'
+
+eval "$(rbenv init -)"
