@@ -15,6 +15,8 @@ Plug 'RobertYan/monokai-soda'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Dracula theme
 Plug 'dracula/vim', { 'as': 'dracula' }
+" Gruvbox theme
+Plug 'morhetz/gruvbox'
 " Intellisense engine from VSCode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Shows git status of lines of code
@@ -88,9 +90,9 @@ syntax enable
 set t_vb=
 
 set background=dark
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean-community'
-colorscheme dracula
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'ocean-community'
+colorscheme gruvbox
 
 " FZF settings (ctrl+p shortcut)
 nnoremap <silent> <C-p> :GitFiles<CR>
