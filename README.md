@@ -12,7 +12,7 @@
 - [ag](https://github.com/ggreer/the_silver_searcher) - Ack/Grep replacement
 - [firefox](https://firefox.com/) - Web Browser
 - [ghostwriter](https://wereturtle.github.io/ghostwriter/) - Minimal markdown editor
-- [nvm](https://github.com/nvm-sh/nvm) - Node version manager
+- [asdf](https://github.com/asdf-vm/asdf) - Dev tool version manager (node, ruby, python, go, etc)
 - [docker](https://docs.docker.com/engine/install/ubuntu/) - Containers
 - [ZSH autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) - FISH-like autosuggestions
 

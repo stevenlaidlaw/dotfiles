@@ -55,6 +55,7 @@ set tabstop=2
 
 set ruler
 set list
+set listchars=space:.
 
 set undolevels=1000
 set backspace=indent,eol,start
