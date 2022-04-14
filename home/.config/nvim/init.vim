@@ -32,6 +32,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 " Ack integration (override by Ag in settings)
 Plug 'mileszs/ack.vim'
+" Prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 call plug#end()
 
@@ -117,6 +119,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Use Ag instead of Ack
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep'
+
+" Prettier auto-format on save
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " Some common misspellings
 cnoreabbrev W! w!
