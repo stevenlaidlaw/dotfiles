@@ -21,7 +21,7 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Shows git status of lines of code
 Plug 'airblade/vim-gitgutter'
-" Auto-clode parens, quotes, brackets, etc
+" Auto-close parens, quotes, brackets, etc
 Plug 'Raimondi/delimitMate'
 " Lazy-loads a LOT of language plugins
 Plug 'sheerun/vim-polyglot'
@@ -34,6 +34,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mileszs/ack.vim'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+" Copilot
+Plug 'github/copilot.vim'
 
 call plug#end()
 
