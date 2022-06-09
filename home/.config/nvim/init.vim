@@ -140,3 +140,5 @@ cnoreabbrev Qall qall
 
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
+set splitbelow
+set splitright
