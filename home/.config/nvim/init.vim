@@ -36,6 +36,8 @@ Plug 'mileszs/ack.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 " Copilot
 Plug 'github/copilot.vim'
+" Goyo - Distraction-free vim
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
