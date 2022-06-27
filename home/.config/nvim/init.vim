@@ -38,6 +38,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 Plug 'github/copilot.vim'
 " Goyo - Distraction-free vim
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+let g:limelight_conceal_guifg = '#444444'
 
 call plug#end()
 

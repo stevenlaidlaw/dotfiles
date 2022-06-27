@@ -12,6 +12,7 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -lah'
 alias vi='nvim'
 alias vim='nvim'
+alias vig='vi +Goyo +Limelight'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 
