@@ -6,6 +6,7 @@ sync-up:
 	cp ~/Pictures/Background.png home/Pictures/
 	cp ~/Pictures/Background.xcf home/Pictures/
 	cp ~/.vale.ini home/
+	cp ~/.config/alacritty.yml home/.config/
 
 sync-down:
 	rsync -aivP home/ ~/

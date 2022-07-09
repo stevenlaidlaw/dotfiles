@@ -1,0 +1,8 @@
+font:
+  normal:
+    family: "Courier Prime"
+
+  size: 15
+  
+  offset:
+    y: 6
