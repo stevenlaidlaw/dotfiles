@@ -19,6 +19,13 @@ function get_aws_profile() {
   # echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
 }
 
+function get_work_prompt() {
+  if [[ "$CODESPACES" = "true" ]]; then
+    C1="%{$FG[005]%}"
+    echo "$C1[[CODESPACES]]$reset_color "
+  fi
+}
+
 # Must use Powerline font, for \uE0A0 to render.
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{%B$FG[010]%}\uE0A0 "
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
@@ -30,7 +37,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Left prompt
 PROMPT='
-[WORK] %{%B$FG[012]%}%~%{$reset_color%}$(my_git_prompt_info)%{$reset_color%}
+$(get_work_prompt)%{%B$FG[012]%}%~%{$reset_color%}$(my_git_prompt_info)%{$reset_color%}
 %% '
 # ∑∆∞§¶
 
