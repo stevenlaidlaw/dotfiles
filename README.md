@@ -22,5 +22,4 @@
 ## Steps
 
 1. Run `./install.sh`
-2. Run `PlugInstall` inside nvim
-3. Set your default node version to latest
+2. Set your default node version to latest
