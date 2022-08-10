@@ -30,7 +30,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Left prompt
 PROMPT='
-%{%B$FG[012]%}%~%{$reset_color%}$(my_git_prompt_info)%{$reset_color%}
+[WORK] %{%B$FG[012]%}%~%{$reset_color%}$(my_git_prompt_info)%{$reset_color%}
 %% '
 # ∑∆∞§¶
 
