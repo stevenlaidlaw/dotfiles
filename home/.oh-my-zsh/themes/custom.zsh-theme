@@ -22,7 +22,7 @@ function get_aws_profile() {
 function get_work_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then
     C1="%{$FG[005]%}"
-    echo "$C1[[CODESPACES]]$reset_color "
+    echo "$C1>CODESPACES%{$reset_color%} "
   fi
 }
 
