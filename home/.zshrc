@@ -7,7 +7,7 @@ plugins=(git asdf zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ "$CODESPACES" != "true"]]; then
+if [[ "$CODESPACES" != "true" ]]; then
 	. /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 
