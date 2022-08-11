@@ -1,3 +1,21 @@
+# Colors
+# 000 - black
+# 001 - red
+# 002 - green
+# 003 - yellow
+# 004 - blue
+# 005 - magenta
+# 006 - cyan
+# 007 - white
+# 008 - gray
+# 009 - bright red
+# 010 - bright green
+# 011 - bright yellow
+# 012 - bright blue
+# 013 - bright magenta
+# 014 - bright cyan
+# 015 - bright white
+
 function my_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   GIT_STATUS=$(git_prompt_status)
@@ -21,13 +39,13 @@ function get_aws_profile() {
 
 function get_work_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then
-    C1="%{$FG[005]%}"
-    echo "$C1>CODESPACES%{$reset_color%} "
+    C1="%{$FG[003]%}"
+    echo "$C1<CODESPACE>%{$reset_color%} "
   fi
 }
 
 # Must use Powerline font, for \uE0A0 to render.
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{%B$FG[010]%}\uE0A0 "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{%B$FG[010]%}\uE0A0"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
 ZSH_THEME_GIT_PROMPT_ADDED="+"
 ZSH_THEME_GIT_PROMPT_MODIFIED="*"
