@@ -18,6 +18,7 @@
 
 - [plug](https://github.com/junegunn/vim-plug) - Vi plugin manager
 - [ZSH autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) - FISH-like autosuggestions
+- [.tmux](https://github.com/gpakosz/.tmux) - Self-contained, pretty, and versatile tmux config
 
 ## Steps
 
