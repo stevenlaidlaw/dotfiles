@@ -5,9 +5,6 @@ DISABLE_UPDATE_PROMPT="true"
 
 plugins=(git asdf zsh-autosuggestions)
 
-git config --add oh-my-zsh.hide-status 1
-git config --add oh-my-zsh.hide-dirty 1
-
 source $ZSH/oh-my-zsh.sh
 
 if [[ "$CODESPACES" != "true" ]]; then
