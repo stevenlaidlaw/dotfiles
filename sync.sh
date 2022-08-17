@@ -3,3 +3,4 @@ cp ~/.config/nvim/init.vim home/.config/nvim/init.vim
 cp ~/.zshrc home/.zshrc
 cp ~/.vale.ini home/
 cp ~/.config/alacritty.yml home/.config/
+cp -r ~/.config/kitty home/.config/
