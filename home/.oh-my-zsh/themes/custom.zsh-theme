@@ -20,7 +20,7 @@ function my_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   GIT_STATUS=$(git_prompt_status)
   [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS"
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}%{$FG[009]%}$GIT_STATUS"
+  echo " $ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}%{$FG[009]%}$GIT_STATUS"
 }
 
 function get_aws_vault_and_region() {
