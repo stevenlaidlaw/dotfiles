@@ -15,7 +15,7 @@ alias ll='ls -lah'
 alias vi='nvim'
 alias vim='nvim'
 alias vig='vi +Goyo +Limelight'
-alias bat='bat -P'
+alias bat='bat --theme=gruvbox-dark -P'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 
