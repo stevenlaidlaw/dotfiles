@@ -5,10 +5,8 @@ sudo chsh -s /bin/zsh vscode
 
 if [[ "$CODESPACES" == "true" ]]; then
 	git config --global --add oh-my-zsh.hide-status 1
-	git config --global --add oh-my-zsh.hide-dirty 1
 fi
 
-rm **/.DS_Store
 # Sync dotfiles
 rsync -aivP home/ ~/
 # Install vim-plug
