@@ -5,6 +5,7 @@ sudo chsh -s /bin/zsh vscode
 
 if [[ "$CODESPACES" == "true" ]]; then
 	git config --global --add oh-my-zsh.hide-status 1
+	yes | sudo apt install neovim
 fi
 
 # Sync dotfiles
@@ -16,3 +17,5 @@ nvim +'PlugInstall --sync' +qa
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # Install default .tmux config
 git clone https://github.com/gpakosz/.tmux ~/.tmux && ln -s -f .tmux/.tmux.conf ~/.tmux.conf && cp ~/.tmux/.tmux.conf.local ~/
+# Install prettier
+npm i --global prettier
