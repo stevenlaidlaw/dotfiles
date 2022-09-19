@@ -66,7 +66,7 @@ function my_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   GIT_STATUS=$(git_prompt_status)
   [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS" # add a space if there is a status
-  echo "%B$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(color brightred)$GIT_STATUS"
+  echo " $(decor \]━━\[) %B$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(color brightred)$GIT_STATUS"
 }
 # Must use Powerline font, for \uE0A0 to render.
 ZSH_THEME_GIT_PROMPT_PREFIX="$(color brightgreen)\uE0A0"
@@ -78,9 +78,9 @@ ZSH_THEME_GIT_PROMPT_DELETED="!"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Left prompt
-PROMPT="
-$(decor ┏━\[) $(get_codespaces_prompt)$(color brightblue)%B%~ $(decor \]━━\[) $(my_git_prompt_info) $(decor \])
-$(decor ┗━━━❯❯) "
+PROMPT='
+$(decor ┏━\[) $(get_codespaces_prompt)$(color brightblue)%B%~$(my_git_prompt_info) $(decor \])
+$(decor ┗━━━❯❯) '
 
 # Right prompt
 RPROMPT=""
