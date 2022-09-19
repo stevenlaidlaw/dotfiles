@@ -19,3 +19,4 @@ alias bat='bat --theme=gruvbox-dark -P'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 
+export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
