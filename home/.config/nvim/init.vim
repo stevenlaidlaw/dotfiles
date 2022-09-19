@@ -17,8 +17,10 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Gruvbox theme
 Plug 'morhetz/gruvbox'
-" Intellisense engine from VSCode
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if $CODESPACES != 'true'
+  " Intellisense engine from VSCode
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 " Shows git status of lines of code
 Plug 'airblade/vim-gitgutter'
 " Auto-close parens, quotes, brackets, etc
