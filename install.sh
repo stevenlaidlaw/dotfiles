@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Always want to use ZSH as my default shell (e.g. for SSH)
 sudo chsh -s /bin/zsh vscode
