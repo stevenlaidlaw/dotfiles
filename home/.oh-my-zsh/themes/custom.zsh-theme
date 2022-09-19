@@ -1,26 +1,45 @@
-# Colors
-# 000 - black
-# 001 - red
-# 002 - green
-# 003 - yellow
-# 004 - blue
-# 005 - magenta
-# 006 - cyan
-# 007 - white
-# 008 - gray
-# 009 - bright red
-# 010 - bright green
-# 011 - bright yellow
-# 012 - bright blue
-# 013 - bright magenta
-# 014 - bright cyan
-# 015 - bright white
+function color() {
+  if [[ "$1" = "black" ]]; then
+    echo $FG[000]
+  elif [[ "$1" = "red" ]]; then
+    echo $FG[001]
+  elif [[ "$1" = "green" ]]; then
+    echo $FG[002]
+  elif [[ "$1" = "yellow" ]]; then
+    echo $FG[003]
+  elif [[ "$1" = "blue" ]]; then
+    echo $FG[004]
+  elif [[ "$1" = "magenta" ]]; then
+    echo $FG[005]
+  elif [[ "$1" = "cyan" ]]; then
+    echo $FG[006]
+  elif [[ "$1" = "white" ]]; then
+    echo $FG[007]
+  elif [[ "$1" = "gray" ]]; then
+    echo $FG[008]
+  elif [[ "$1" = "brightred" ]]; then
+    echo $FG[009]
+  elif [[ "$1" = "brightgreen" ]]; then
+    echo $FG[010]
+  elif [[ "$1" = "brightyellow" ]]; then
+    echo $FG[011]
+  elif [[ "$1" = "brightblue" ]]; then
+    echo $FG[012]
+  elif [[ "$1" = "brightmagenta" ]]; then
+    echo $FG[013]
+  elif [[ "$1" = "brightcyan" ]]; then
+    echo $FG[014]
+  elif [[ "$1" = "brightwhite" ]]; then
+    echo $FG[015]
+  fi
+}
 
-function my_git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  GIT_STATUS=$(git_prompt_status)
-  [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS"
-  echo " $ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}%{$FG[009]%}$GIT_STATUS"
+function reset() {
+  echo $reset_color
+}
+
+function decor() {
+  echo "$(color brightmagenta)%B$1$(reset)"
 }
 
 function get_aws_vault_and_region() {
@@ -37,15 +56,20 @@ function get_aws_profile() {
   # echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
 }
 
-function get_work_prompt() {
+function get_codespaces_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then
-    C1="%{$FG[003]%}"
-    echo "$C1<CODESPACE>%{$reset_color%} "
+    echo "%B$(color brightyellow)codespace $(decor \]━━\[) "
   fi
 }
 
+function my_git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  GIT_STATUS=$(git_prompt_status)
+  [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS" # add a space if there is a status
+  echo "%B$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(color brightred)$GIT_STATUS"
+}
 # Must use Powerline font, for \uE0A0 to render.
-ZSH_THEME_GIT_PROMPT_PREFIX="%{%B$FG[010]%}\uE0A0"
+ZSH_THEME_GIT_PROMPT_PREFIX="$(color brightgreen)\uE0A0"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
 ZSH_THEME_GIT_PROMPT_ADDED="+"
 ZSH_THEME_GIT_PROMPT_MODIFIED="*"
@@ -54,11 +78,10 @@ ZSH_THEME_GIT_PROMPT_DELETED="!"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Left prompt
-PROMPT='
-$(get_work_prompt)%{%B$FG[012]%}%~%{$reset_color%}$(my_git_prompt_info)%{$reset_color%}
-%{%B$FG[012]%}❯❯%{$reset_color%} '
-# ∑∆∞§¶
+PROMPT="
+$(decor ┏━\[) $(get_codespaces_prompt)$(color brightblue)%B%~ $(decor \]━━\[) $(my_git_prompt_info) $(decor \])
+$(decor ┗━━━❯❯) "
 
 # Right prompt
-RPROMPT='$(get_aws_profile)%{$reset_color%}'
+RPROMPT=""
 
