@@ -3,7 +3,7 @@
 # Always want to use ZSH as my default shell (e.g. for SSH)
 sudo chsh -s /bin/zsh vscode
 
-if [[ "$CODESPACES" == "true" ]]; then
+if [[ "$CODESPACES" = "true" ]]; then
 	git config --global --add oh-my-zsh.hide-status 1
 	yes | sudo apt install neovim
 fi
