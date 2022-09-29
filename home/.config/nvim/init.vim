@@ -8,17 +8,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 " Better status and tab lines
 Plug 'vim-airline/vim-airline'
-" Molokai Theme
-Plug 'tomasr/molokai'
-Plug 'RobertYan/monokai-soda'
-" Material theme
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-" Dracula theme
-Plug 'dracula/vim', { 'as': 'dracula' }
 " Gruvbox theme
 Plug 'morhetz/gruvbox'
+" Intellisense engine from VSCode
 if $CODESPACES != 'true'
-  " Intellisense engine from VSCode
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 " Shows git status of lines of code
