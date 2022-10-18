@@ -40,6 +40,7 @@ call plug#end()
 
 set mouse=a
 set number
+set relativenumber
 set linebreak
 set showmatch
 set visualbell
