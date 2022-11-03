@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="custom"
 DISABLE_UPDATE_PROMPT="true"
 
-plugins=(git asdf zsh-autosuggestions)
+plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
 
