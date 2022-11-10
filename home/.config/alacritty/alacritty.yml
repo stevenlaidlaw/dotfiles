@@ -1,0 +1,6 @@
+import:
+  - ~/.alacritty-colorscheme/themes/gruvbox_dark.yaml
+
+font:
+  family: "Courier Prime"
+  size: 14
