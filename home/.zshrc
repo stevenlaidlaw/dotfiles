@@ -22,5 +22,5 @@ alias pushall='git add . && git commit -m "`date`" && git push'
 export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
 
 if [[ -z "$TMUX" ]] && [[ "$CODESPACES" != "true" ]]; then
-	tmux attach-session -t ssh_tmux || tmux new-session -s home
+	tmux attach-session -t ssh_tmux || tmux attach-session -t home || tmux new-session -s home
 fi
