@@ -141,5 +141,13 @@ cnoreabbrev Qall qall
 
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
+" Auto save session on exit
+fu! SaveSession()
+  execute 'mksession! ~/.session'
+endfunction
+
+autocmd VimLeave * call SaveSession()
+
+" Nicer splits
 set splitbelow
 set splitright
