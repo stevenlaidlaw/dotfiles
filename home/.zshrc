@@ -12,9 +12,10 @@ if [[ "$CODESPACES" != "true" ]]; then
 fi
 
 alias ll='ls -lah'
-alias vi='nvim'
-alias vim='nvim'
+alias vi='nvim -S ~/.session'
+alias vim='nvim -S ~/.session'
 alias vig='vi +Goyo +Limelight'
+alias nvim='nvim -S ~/.session'
 alias bat='bat --theme=gruvbox-dark -P'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
