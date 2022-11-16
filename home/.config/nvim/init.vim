@@ -106,7 +106,7 @@ nnoremap <silent> <C-k> :Buffers<CR>
 
 " NERDTree Settings (ctrl+n shortcut)
 let g:NERDTreeIgnore=['\.git$', 'node_modules$']
-#nnoremap <silent> <F2> :NERDTreeFind<CR>
+" nnoremap <silent> <F2> :NERDTreeFind<CR>
 map <F2> :NERDTreeToggle<CR>
 
 " Enable the list of buffers
