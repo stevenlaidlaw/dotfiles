@@ -102,11 +102,12 @@ colorscheme gruvbox
 " FZF settings (ctrl+p shortcut)
 nnoremap <silent> <C-p> :GitFiles<CR>
 nnoremap <silent> <C-n> :Files<CR>
+nnoremap <silent> <C-k> :Buffers<CR>
 
 " NERDTree Settings (ctrl+n shortcut)
 let g:NERDTreeIgnore=['\.git$', 'node_modules$']
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-map <C-b> :NERDTreeToggle<CR>
+#nnoremap <silent> <F2> :NERDTreeFind<CR>
+map <F2> :NERDTreeToggle<CR>
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
