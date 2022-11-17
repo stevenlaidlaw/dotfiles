@@ -142,8 +142,9 @@ cnoreabbrev Qall qall
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
 " Auto save session on exit
-fu! SaveSession()
-  execute 'mksession! ~/.session'
+function! SaveSession()
+  let cwd_path = substitute(substitute(getcwd(), '\/', '_', 'g'), '_', '', '')
+  execute 'mksession! ~/.sessions/' . cwd_path
 endfunction
 
 autocmd VimLeave * call SaveSession()

@@ -11,11 +11,20 @@ if [[ "$CODESPACES" != "true" ]]; then
 	. /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 
+function session() {
+	local cwd=$(pwd)
+	local cwd=${cwd:1} # remove leading slash
+	local cwd=${cwd//\//_} # replace slashes with underscores
+	local session_file="~/.sessions/$cwd"
+	if [[ -f $session_file ]]; then
+		nvim -S $session_file
+	else
+		nvim
+	fi
+}
+
 alias ll='ls -lah'
-alias vi='nvim -S ~/.session'
-alias vim='nvim -S ~/.session'
 alias vig='vi +Goyo +Limelight'
-alias nvim='nvim -S ~/.session'
 alias bat='bat --theme=gruvbox-dark -P'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
