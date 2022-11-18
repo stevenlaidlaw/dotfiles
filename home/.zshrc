@@ -16,13 +16,11 @@ function session() {
 	local cwd=${cwd:1} # remove leading slash
 	local cwd=${cwd//\//_} # replace slashes with underscores
 	local session_file="~/.sessions/$cwd"
-	if [[ -f $session_file ]]; then
-		nvim -S $session_file
-	else
-		nvim
-	fi
+	nvim -S $session_file
 }
 
+alias vi='nvim'
+alias vim='nvim'
 alias ll='ls -lah'
 alias vig='vi +Goyo +Limelight'
 alias bat='bat --theme=gruvbox-dark -P'
