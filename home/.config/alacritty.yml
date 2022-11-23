@@ -1,8 +1,10 @@
+env:
+  TERM: "xterm-256color"
 font:
   normal:
     family: "Courier Prime"
 
   size: 15
-  
+
   offset:
-    y: 6
+    y: 0
