@@ -1,6 +1,7 @@
 import:
   - ~/.alacritty-colorscheme/themes/gruvbox_dark.yaml
-
+env:
+  TERM: "xterm-256color"
 font:
-  family: "Courier Prime"
+  family: "FiraCode Nerd Font"
   size: 14
