@@ -34,6 +34,8 @@ Plug 'github/copilot.vim'
 " Goyo - Distraction-free vim
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+" Inline git commit messages
+Plug 'APZelos/blamer.nvim'
 let g:limelight_conceal_guifg = '#444444'
 
 call plug#end()
