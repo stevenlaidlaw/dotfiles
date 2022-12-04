@@ -4,22 +4,16 @@ filetype off
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
-" Tree explorer like VSCode - Ctrl+N
-Plug 'scrooloose/nerdtree'
 " Better status and tab lines
 Plug 'vim-airline/vim-airline'
 " Gruvbox theme
 Plug 'morhetz/gruvbox'
 " Intellisense engine from VSCode
-if $CODESPACES != 'true'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Shows git status of lines of code
 Plug 'airblade/vim-gitgutter'
-" Auto-close parens, quotes, brackets, etc
-Plug 'Raimondi/delimitMate'
 " Lazy-loads a LOT of language plugins
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 " File search which is fast - Ctrl+P
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -31,9 +25,6 @@ Plug 'mileszs/ack.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 " Copilot
 Plug 'github/copilot.vim'
-" Goyo - Distraction-free vim
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 " Inline git commit messages
 Plug 'APZelos/blamer.nvim'
 let g:limelight_conceal_guifg = '#444444'
@@ -97,8 +88,6 @@ syntax enable
 set t_vb=
 
 set background=dark
-"let g:material_terminal_italics = 1
-"let g:material_theme_style = 'ocean-community'
 colorscheme gruvbox
 
 " FZF settings (ctrl+p shortcut)
@@ -106,24 +95,11 @@ nnoremap <silent> <C-p> :GitFiles<CR>
 nnoremap <silent> <C-n> :Files<CR>
 nnoremap <silent> <C-k> :Buffers<CR>
 
-" NERDTree Settings (ctrl+n shortcut)
-let g:NERDTreeIgnore=['\.git$', 'node_modules$']
-" nnoremap <silent> <F2> :NERDTreeFind<CR>
-map <F2> :NERDTreeToggle<CR>
-
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
-" If no file is opened at startup open NerdTree
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Use Ag instead of Ack
-" let g:ackprg = 'ag --nogroup --nocolor --column'
-let g:ackprg = 'ag --vimgrep'
 
 " Prettier auto-format on save
 let g:prettier#autoformat = 1
