@@ -6,6 +6,7 @@ font:
   family: "FiraCode Nerd Font"
   size: 14
 
+alt_send_esc: true
 # Colors (Gruvbox dark)
 colors:
   # Default colors
