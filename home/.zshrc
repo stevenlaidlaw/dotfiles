@@ -31,7 +31,7 @@ export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
 
 if [[ -z "$TMUX" ]]; then
 	if [[ "$CODESPACES" == "true" ]]; then
-		tmux attach -t remote || tmux new -s remote
+		#tmux attach -t remote || tmux new -s remote
 	else
 		tmux attach-session -t home || tmux new-session -s home
 	fi
