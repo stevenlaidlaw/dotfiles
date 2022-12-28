@@ -79,25 +79,7 @@ cnoreabbrev Qall qall
 " KEY MAPPINGS
 " ############
 
-" Use system clipboard
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-" Use <c-space> to trigger completion.
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-e> to close completion menu.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" FZF settings (ctrl+p shortcut)
+" FZF (ctrl+p shortcut)
 nnoremap <silent> <C-p> :GitFiles<CR>
 nnoremap <silent> <C-n> :Files<CR>
 nnoremap <silent> <C-k> :Buffers<CR>
