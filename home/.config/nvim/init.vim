@@ -22,6 +22,7 @@ call plug#end()
 " CONFIGURATION
 " #############
 
+set mouse=
 set number " Show line numbers
 set relativenumber " Show relative line numbers
 set linebreak " Wrap long lines
