@@ -1,109 +1,67 @@
-set nocompatible
-filetype off
+" filetype off " required by Vundle
 
-" Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
+" #######
+" PLUGINS
+" #######
 
-" Better status and tab lines
-Plug 'vim-airline/vim-airline'
-" Gruvbox theme
-Plug 'morhetz/gruvbox'
-" Intellisense engine from VSCode
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Shows git status of lines of code
-Plug 'airblade/vim-gitgutter'
-" Lazy-loads a LOT of language plugins
-"Plug 'sheerun/vim-polyglot'
-" File search which is fast - Ctrl+P
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
-" Decent icons for files. Get the nerdfont here: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
-Plug 'ryanoasis/vim-devicons'
-" Ack integration (override by Ag in settings)
-Plug 'mileszs/ack.vim'
-" Prettier
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-" Copilot
-Plug 'github/copilot.vim'
-" Inline git commit messages
-Plug 'APZelos/blamer.nvim'
-let g:limelight_conceal_guifg = '#444444'
-
+call plug#begin('~/.vim/plugged') " Specify a directory for plugins
+Plug 'vim-airline/vim-airline' " Status line
+Plug 'morhetz/gruvbox' " Gruvbox theme
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine
+Plug 'airblade/vim-gitgutter' " Git status per line
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } " File search
+Plug 'junegunn/fzf.vim' " FZF integration
+Plug 'mileszs/ack.vim' " Ack integration
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' } " Prettier integration
+Plug 'github/copilot.vim' " Copilot integration
+Plug 'APZelos/blamer.nvim' " Git blame
+let g:limelight_conceal_guifg = '#444444' " Limelight color
 call plug#end()
 
-set mouse=a
-set number
-set relativenumber
-set linebreak
-set showmatch
-set visualbell
+" #############
+" CONFIGURATION
+" #############
 
-set hlsearch
-set smartcase
-set ignorecase
-set incsearch
-
-set autoindent
-set shiftwidth=2
-set smartindent
-set smarttab
-set softtabstop=2
-set tabstop=2
-
-set ruler
-set list
-set listchars=space:.
-
-set undolevels=1000
-set backspace=indent,eol,start
-
-set hidden
-set cmdheight=1
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-inoremap <silent><expr> <c-space> coc#refresh()
+set mouse=a " Enable mouse support
+set number " Show line numbers
+set relativenumber " Show relative line numbers
+set linebreak " Wrap long lines
+set showmatch " Show matching brackets
+set visualbell " Disable beeps
+set hlsearch " Highlight search results
+set smartcase " Ignore case if search term is all lowercase
+set ignorecase " Ignore case when searching
+set incsearch " Show search results as you type
+set autoindent " Auto indent new lines
+set shiftwidth=2 " Sets the number of spaces for autoindent
+set smartindent " auto indent new lines
+set smarttab " indent with tabs, align with spaces
+set softtabstop=2 " Sets the number of spaces for tab
+set tabstop=2 " Tab stops every 2 spaces (for display)
+set ruler " Show cursor position
+set list " Show whitespace
+set listchars=space:. " Show spaces as dots
+set undolevels=1000 " Number of undo levels
+set backspace=indent,eol,start " Allow backspacing over everything in insert mode
+set hidden " Allow buffers to be hidden
+set cmdheight=1 " Height of command bar
+set updatetime=300 " Faster completion (default is 4000 ms)
+set shortmess+=c " Don't pass messages to ins-completion-menu
+set signcolumn=yes " Always show the signcolumn, otherwise it would shift the text each time
+set t_vb= " Disable visual bell
+set splitbelow " Horizontal splits will automatically be below
+set splitright " Vertical splits will automatically be to the right
+set background=dark " Dark background
+colorscheme gruvbox " Set theme
 
 if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
+  set t_Co=256 " Support 256 colors
 endif
 if (has("termguicolors"))
-  set termguicolors
+  set termguicolors " Support 24-bit colors
 endif
 
-syntax enable
-
-set t_vb=
-
-set background=dark
-colorscheme gruvbox
-
-" FZF settings (ctrl+p shortcut)
-nnoremap <silent> <C-p> :GitFiles<CR>
-nnoremap <silent> <C-n> :Files<CR>
-nnoremap <silent> <C-k> :Buffers<CR>
-
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Prettier auto-format on save
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
+syntax enable " Enable syntax highlighting
 
 " Some common misspellings
 cnoreabbrev W! w!
@@ -117,7 +75,51 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+" ############
+" KEY MAPPINGS
+" ############
+
+" Use system clipboard
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+" Use <c-space> to trigger completion.
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-e> to close completion menu.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" FZF settings (ctrl+p shortcut)
+nnoremap <silent> <C-p> :GitFiles<CR>
+nnoremap <silent> <C-n> :Files<CR>
+nnoremap <silent> <C-k> :Buffers<CR>
+
+" ###############
+" PLUGIN SETTINGS
+" ###############
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Prettier auto-format on save
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
+
+" ##############
+" USER FUNCTIONS
+" ##############
 
 " Auto save session on exit
 function! SaveSession()
@@ -125,8 +127,9 @@ function! SaveSession()
   execute 'mksession! ~/.sessions/' . cwd_path
 endfunction
 
+" Call SaveSession() on exit
 autocmd VimLeave * call SaveSession()
 
-" Nicer splits
-set splitbelow
-set splitright
+" Remove background color on startup
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+
