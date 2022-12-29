@@ -7,7 +7,6 @@
 call plug#begin('~/.vim/plugged') " Specify a directory for plugins
 Plug 'vim-airline/vim-airline' " Status line
 Plug 'morhetz/gruvbox' " Gruvbox theme
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine
 Plug 'airblade/vim-gitgutter' " Git status per line
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } " File search
 Plug 'junegunn/fzf.vim' " FZF integration
