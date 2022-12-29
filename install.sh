@@ -3,7 +3,7 @@
 echo "Attempting dotfiles install..."
 
 # Always want to use ZSH as my default shell (e.g. for SSH)
-#sudo chsh -s /bin/zsh $(whoami)
+sudo chsh -s /bin/zsh $(whoami)
 
 # Install zsh addons
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
