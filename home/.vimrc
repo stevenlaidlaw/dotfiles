@@ -1,5 +1,8 @@
 " filetype off " required by Vundle
 
+let &t_SI = "\e[6 q" " Insert mode convert cursor to a line `|`
+let &t_EI = "\e[2 q" " Normal mode convert cursor to a block `█`
+
 " #######
 " PLUGINS
 " #######
