@@ -19,8 +19,6 @@ function session() {
 	nvim -S $session_file
 }
 
-alias vi='nvim'
-alias vim='nvim'
 alias ll='ls -lah'
 alias vig='vi +Goyo +Limelight'
 alias bat='bat --theme=gruvbox-dark -P'
