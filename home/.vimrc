@@ -48,6 +48,7 @@ set backspace=indent,eol,start " Allow backspacing over everything in insert mod
 set hidden " Allow buffers to be hidden
 set cmdheight=1 " Height of command bar
 set updatetime=300 " Faster completion (default is 4000 ms)
+set ttimeoutlen=5 " Prevent delay when switching modes
 set shortmess+=c " Don't pass messages to ins-completion-menu
 set signcolumn=yes " Always show the signcolumn, otherwise it would shift the text each time
 set t_vb= " Disable visual bell
