@@ -15,9 +15,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } " File search
 Plug 'junegunn/fzf.vim' " FZF integration
 Plug 'mileszs/ack.vim' " Ack integration
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' } " Prettier integration
-Plug 'github/copilot.vim' " Copilot integration
+" Plug 'github/copilot.vim' " Copilot integration
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'APZelos/blamer.nvim' " Git blame
-let g:limelight_conceal_guifg = '#444444' " Limelight color
 call plug#end()
 
 " #############
