@@ -102,7 +102,7 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 " COC Extensions
-let g:coc_global_extensions = ['coc-json', 'coc-rls', 'coc-html', 'coc-java', 'coc-go', 'coc-sql', 'coc-tsserver', 'coc-clangd', 'coc-python', 'coc-css']
+let g:coc_global_extensions = ['coc-json', 'coc-rls', 'coc-html', 'coc-java', 'coc-go', 'coc-sql', 'coc-tsserver', 'coc-clangd', 'coc-python', 'coc-css', 'coc-solargraph']
 
 " ##############
 " USER FUNCTIONS
