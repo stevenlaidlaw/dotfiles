@@ -20,7 +20,6 @@ function session() {
 }
 
 alias ll='ls -lah'
-alias vig='vi +Goyo +Limelight'
 alias bat='bat --theme=gruvbox-dark -P'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
