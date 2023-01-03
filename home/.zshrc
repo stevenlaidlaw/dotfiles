@@ -16,7 +16,7 @@ function session() {
 	local cwd=${cwd:1} # remove leading slash
 	local cwd=${cwd//\//_} # replace slashes with underscores
 	local session_file="~/.sessions/$cwd"
-	nvim -S $session_file
+	vim -S $session_file
 }
 
 alias ll='ls -lah'
