@@ -22,8 +22,9 @@ Plug 'junegunn/fzf.vim' " FZF integration
 Plug 'mileszs/ack.vim' " Ack integration
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' } " Prettier integration
 " Plug 'github/copilot.vim' " Copilot integration
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " VSCode Extension installer, used to install various LSPs
 Plug 'APZelos/blamer.nvim' " Git blame
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' } " Ruby Solargraph LSP
 call plug#end()
 
 " #############
@@ -107,8 +108,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
-" COC Extensions
-let g:coc_global_extensions = ['coc-json', 'coc-rls', 'coc-html', 'coc-java', 'coc-go', 'coc-sql', 'coc-tsserver', 'coc-clangd', 'coc-python', 'coc-css', 'coc-solargraph']
+" COC Extensions (LSPs)
+let g:coc_global_extensions = ['coc-json', 'coc-rls', 'coc-html', 'coc-java', 'coc-go', 'coc-sql', 'coc-tsserver', 'coc-clangd', 'coc-python', 'coc-css']
 
 " ##############
 " USER FUNCTIONS
