@@ -6,10 +6,11 @@ DISABLE_UPDATE_PROMPT="true"
 plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
-export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
+# OSX Only stuff
 if [[ "$CODESPACES" != "true" ]]; then
 	. /opt/homebrew/opt/asdf/libexec/asdf.sh
+	export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 fi
 
 function session() {
