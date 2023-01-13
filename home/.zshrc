@@ -6,6 +6,7 @@ DISABLE_UPDATE_PROMPT="true"
 plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
+export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
 if [[ "$CODESPACES" != "true" ]]; then
 	. /opt/homebrew/opt/asdf/libexec/asdf.sh
@@ -25,9 +26,6 @@ alias bat='bat --theme=gruvbox-dark -P'
 alias pushall='git add . && git commit -m "`date`" && git push'
 
 export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 if [[ -z "$TMUX" ]]; then
 	if [[ "$CODESPACES" == "true" ]]; then
