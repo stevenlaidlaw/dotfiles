@@ -91,8 +91,10 @@ cnoreabbrev Qall qall
 
 " FZF (ctrl+p shortcut)
 nnoremap <silent> <C-p> :GitFiles<CR>
-nnoremap <silent> <C-n> :Files<CR>
+nnoremap <silent> <C-S-p> :Files<CR>
 nnoremap <silent> <C-k> :Buffers<CR>
+nnoremap <silent> <C-S-f> :Ag<CR>
+nnoremap <silent> <C-S-t> :term<CR>
 
 " ###############
 " PLUGIN SETTINGS
