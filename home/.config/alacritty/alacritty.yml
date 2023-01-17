@@ -1,7 +1,7 @@
 #import:
 #  - ~/.alacritty-colorscheme/themes/gruvbox_dark.yaml
 env:
-  TERM: "alacritty-direct"
+  TERM: alacritty
 font:
   family: "FiraCode Nerd Font"
   size: 14
