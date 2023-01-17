@@ -13,12 +13,13 @@ if [ -z "$codespace" ]; then
 		exit 1
 fi
 
-echo "Forwarding port 80"
-gh cs ports forward 80:80 -c "$codespace" &
-pid=$!
+#echo "Forwarding port 80"
+#gh cs ports forward 80:80 -c "$codespace" &
+#pid=$!
 
 echo "Attempting to connect to codespace $codespace"
-TERM=xterm-256color gh cs ssh -c "$codespace"
+#TERM=xterm-256color gh cs ssh -c "$codespace"
+gh cs ssh -c "$codespace"
 
-kill -s TERM "$pid"
-echo "Killed codespace port forwarding ($pid)"
+#kill -s TERM "$pid"
+#echo "Killed codespace port forwarding ($pid)"
