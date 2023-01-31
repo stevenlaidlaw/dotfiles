@@ -3,7 +3,11 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="custom"
 DISABLE_UPDATE_PROMPT="true"
 
-plugins=(git asdf)
+if [[ "$CODESPACES" != "true" ]]; then
+	plugins=(git asdf zsh-autosuggestions)
+else
+	plugins=(git asdf)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
