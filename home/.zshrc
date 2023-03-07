@@ -4,7 +4,7 @@ ZSH_THEME="custom"
 DISABLE_UPDATE_PROMPT="true"
 
 if [[ "$CODESPACES" != "true" ]]; then
-	plugins=(git asdf zsh-autosuggestions)
+	plugins=(git asdf)
 else
 	plugins=(git asdf)
 fi

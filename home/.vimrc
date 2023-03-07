@@ -1,5 +1,6 @@
 " filetype off " required by Vundle
 
+set encoding=UTF-8
 let &t_SI = "\e[6 q" " Insert mode convert cursor to a line `|`
 let &t_EI = "\e[2 q" " Normal mode convert cursor to a block `█`
 
@@ -25,6 +26,9 @@ Plug 'github/copilot.vim' " Copilot integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'APZelos/blamer.nvim' " Git blame
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' } " Ruby Solargraph LSP
+Plug 'rhysd/vim-grammarous' " Grammar checker
+Plug 'preservim/nerdtree' " File explorer
+Plug 'ryanoasis/vim-devicons' " Icons
 call plug#end()
 
 " #############
@@ -94,22 +98,27 @@ cnoreabbrev Qall qall
 " KEY MAPPINGS
 " ############
 
-" FZF (ctrl+p shortcut)
 nnoremap <silent> <C-p> :GitFiles<CR>
 nnoremap <silent> <C-S-p> :Files<CR>
 nnoremap <silent> <C-k> :Buffers<CR>
 nnoremap <silent> <C-S-f> :Ag<CR>
 nnoremap <silent> <C-S-t> :term<CR>
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " ###############
 " PLUGIN SETTINGS
 " ###############
+
+let g:NERDTreeWinSize=60 " Set NERDTree width
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Use fonts
+let g:airline_powerline_fonts = 1
 
 " Prettier auto-format on save
 let g:prettier#autoformat = 1

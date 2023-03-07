@@ -2,11 +2,21 @@
 #  - ~/.alacritty-colorscheme/themes/gruvbox_dark.yaml
 env:
   TERM: alacritty
+
 font:
-  family: "FiraCode Nerd Font"
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
+  italic:
+    family: FiraCode Nerd Font
+    style: Italic
   size: 14
 
 alt_send_esc: true
+
 # Colors (Gruvbox dark)
 colors:
   # Default colors
