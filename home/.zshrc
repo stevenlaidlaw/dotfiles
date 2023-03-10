@@ -27,6 +27,14 @@ function session() {
 
 alias ll='ls -lah'
 alias bat='bat --theme=gruvbox-dark -P'
+alias gcl='git clone'
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gpl='git pull'
+alias gps='git push'
+alias gbr='git branch'
+alias gst='git stash'
+alias gsta='git stash apply'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 
