@@ -27,7 +27,7 @@ npm i --global prettier
 mkdir ~/.sessions/
 
 # Special for codespaces
-if [[ "$CODESPACES" != "true" ]]; then
+if [[ "$CODESPACES" == "true" ]]; then
 	# Get the latest version of vim
 	cd /tmp
 	git clone git@github.com:vim/vim.git
