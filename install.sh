@@ -22,6 +22,8 @@ nvm use node
 rsync -aivP home/ ~/
 # Install prettier
 npm i --global prettier
+# Install yarn
+npm i --global yarn
 
 # Create session folder for vim sessions
 mkdir ~/.sessions/
@@ -33,8 +35,6 @@ if [[ "$CODESPACES" == "true" ]]; then
 	git clone git@github.com:vim/vim.git
 	cd vim
 	sudo make && sudo make install && sudo cp /usr/local/bin/vim /usr/bin/vim.basic
-	# Install vim plugins
-	vim +PlugInstall +qall
 fi
 
 echo "Done installing dotfiles!"
