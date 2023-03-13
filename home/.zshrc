@@ -4,9 +4,9 @@ ZSH_THEME="custom"
 DISABLE_UPDATE_PROMPT="true"
 
 if [[ "$CODESPACES" != "true" ]]; then
-	plugins=(git asdf)
+	plugins=(asdf zsh-autosuggestions)
 else
-	plugins=(git asdf)
+	plugins=(asdf)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -37,6 +37,7 @@ alias gps='git push'
 alias gbr='git branch'
 alias gst='git stash'
 alias gsta='git stash apply'
+alias 'git pull'='echo "Use gfe and gme instead of git pull"'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 
