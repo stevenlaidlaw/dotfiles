@@ -37,7 +37,6 @@ alias gps='git push'
 alias gbr='git branch'
 alias gst='git stash'
 alias gsta='git stash apply'
-alias 'git pull'='echo "Use gfe and gme instead of git pull"'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 
