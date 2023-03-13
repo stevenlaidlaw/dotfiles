@@ -10,8 +10,8 @@ let &t_EI = "\e[2 q" " Normal mode convert cursor to a block `█`
 
 let data_dir = '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-	  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-		  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged') " Specify a directory for plugins
@@ -66,6 +66,7 @@ set t_vb= " Disable visual bell
 set splitbelow " Horizontal splits will automatically be below
 set splitright " Vertical splits will automatically be to the right
 set background=dark " Dark background
+silent! colorscheme " Prevent error from blocking first run
 colorscheme gruvbox " Set theme
 
 if $COLORTERM == 'gnome-terminal'
