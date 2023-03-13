@@ -26,4 +26,15 @@ npm i --global prettier
 # Create session folder for vim sessions
 mkdir ~/.sessions/
 
+# Special for codespaces
+if [[ "$CODESPACES" != "true" ]]; then
+	# Get the latest version of vim
+	cd /tmp
+	git clone git@github.com:vim/vim.git
+	cd vim
+	sudo make && sudo make install && sudo cp /usr/local/bin/vim /usr/bin/vim.basic
+	# Install vim plugins
+	vim +PlugInstall +qall
+fi
+
 echo "Done installing dotfiles!"
