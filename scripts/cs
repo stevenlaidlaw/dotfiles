@@ -18,7 +18,7 @@ if [ -z "$codespace" ]; then
 fi
 
 kill_port_forwarding() {
-		ps ax | grep "sudo gh cs ports forward 80:80" | grep -v grep | awk '{print $1}' | sudo xargs kill
+		ps ax | grep "gh cs ports forward 80:80" | grep -v grep | awk '{print $1}' | sudo xargs kill
 		exit 0
 }
 
@@ -27,7 +27,7 @@ forward_port() {
 				then echo "Please run as root"
 				exit
 		fi
-		sudo gh cs ports forward 80:80 -c "$codespace" &
+		gh cs ports forward 80:80 -c "$codespace" &
 		exit 0
 }
 
