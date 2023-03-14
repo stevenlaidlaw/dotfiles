@@ -1,23 +1,12 @@
 #!/bin/sh
 
-# If -k is specified, then kill the port forwarding and exit
-while getopts "k" opt; do
-		case $opt in
-				k)
-						ps ax | grep "sudo gh cs ports forward 80:80 -c $codespace" | grep -v grep | awk '{print $1}' | sudo xargs kill
-						exit 0
-						;;
+# Get the first argument that isn't an option
+while [ $# -gt 0 ]; do
+		case "$1" in
+				-*) shift ;;
+				*)  break ;;
 		esac
 done
-
-# If -k is not specified, then start the port forwarding
-sudo gh cs ports forward 80:80 -c "$codespace" &
-
-if [ -z "$1" ]; then
-		echo "Usage: $0 <codespace>"
-		echo "<codespace> finds the first available codespace that matches the given pattern"
-		exit 1
-fi
 
 # Find the first available codespace that matches the given pattern
 codespace=`gh cs list | grep "$1" | head -n 1 | awk '{print $1}'`
@@ -25,6 +14,40 @@ codespace=`gh cs list | grep "$1" | head -n 1 | awk '{print $1}'`
 # If no codespace is found, then exit
 if [ -z "$codespace" ]; then
 		echo "No codespace found"
+		exit 1
+fi
+
+kill_port_forwarding() {
+		ps ax | grep "sudo gh cs ports forward 80:80" | grep -v grep | awk '{print $1}' | sudo xargs kill
+		exit 0
+}
+
+forward_port() {
+		if [ "$EUID" -ne 0 ]
+				then echo "Please run as root"
+				exit
+		fi
+		sudo gh cs ports forward 80:80 -c "$codespace" &
+		exit 0
+}
+
+while getopts ":k:p" opt; do
+		case $opt in
+				k)
+						kill_port_forwarding
+						;;
+				p)
+						forward_port
+						;;
+		esac
+done
+
+if [ -z "$1" ]; then
+		echo "Usage: $0 <codespace>"
+		echo "<codespace> finds the first available codespace that matches the given pattern"
+		echo "Options:"
+		echo "  -p: Forward port 80 to port 80"
+		echo "  -k: Kill the port forwarding process"
 		exit 1
 fi
 
