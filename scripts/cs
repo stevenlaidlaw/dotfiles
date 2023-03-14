@@ -1,25 +1,34 @@
 #!/bin/sh
 
+# If -k is specified, then kill the port forwarding and exit
+while getopts "k" opt; do
+		case $opt in
+				k)
+						ps ax | grep "sudo gh cs ports forward 80:80 -c $codespace" | grep -v grep | awk '{print $1}' | sudo xargs kill
+						exit 0
+						;;
+		esac
+done
+
+# If -k is not specified, then start the port forwarding
+sudo gh cs ports forward 80:80 -c "$codespace" &
+
 if [ -z "$1" ]; then
 		echo "Usage: $0 <codespace>"
 		echo "<codespace> finds the first available codespace that matches the given pattern"
 		exit 1
 fi
 
+# Find the first available codespace that matches the given pattern
 codespace=`gh cs list | grep "$1" | head -n 1 | awk '{print $1}'`
 
+# If no codespace is found, then exit
 if [ -z "$codespace" ]; then
 		echo "No codespace found"
 		exit 1
 fi
 
-#echo "Forwarding port 80"
-#gh cs ports forward 80:80 -c "$codespace" &
-#pid=$!
-
+# Connect to the codespace
 echo "Attempting to connect to codespace $codespace"
-#TERM=xterm-256color gh cs ssh -c "$codespace"
 gh cs ssh -c "$codespace"
 
-#kill -s TERM "$pid"
-#echo "Killed codespace port forwarding ($pid)"
