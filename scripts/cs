@@ -9,8 +9,12 @@ get_codespace_name() {
 			esac
 	done
 
+	echo "Attempting to get codespace name from '$1'"
+
 	# Find the first available codespace that matches the given pattern
 	codespace=`gh cs list | grep "$1" | head -n 1 | awk '{print $1}'`
+
+	echo "Found codespace '$codespace'"
 
 	# If no codespace is found, then exit
 	if [ -z "$codespace" ]; then
@@ -20,17 +24,21 @@ get_codespace_name() {
 }
 
 kill_port_forwarding() {
+		echo "Killing port forwarding"
 		ps ax | grep "gh cs ports forward 80:80" | grep -v grep | awk '{print $1}' | sudo xargs kill
+		echo "Killed port forwarding"
 		exit 0
 }
 
 forward_port() {
+		echo "Forwarding port 80 to codespace"
 		get_codespace_name
 		if [ "$EUID" -ne 0 ]
 				then echo "Please run as root"
 				exit
 		fi
 		gh cs ports forward 80:80 -c "$codespace" &
+		echo "Port forwarded successfully"
 		exit 0
 }
 
