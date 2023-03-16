@@ -1,21 +1,23 @@
 #!/bin/sh
 
-# Get the first argument that isn't an option
-while [ $# -gt 0 ]; do
-		case "$1" in
-				-*) shift ;;
-				*)  break ;;
-		esac
-done
+get_codespace_name() {
+	# Get the first argument that isn't an option
+	while [ $# -gt 0 ]; do
+			case "$1" in
+					-*) shift ;;
+					*)  break ;;
+			esac
+	done
 
-# Find the first available codespace that matches the given pattern
-codespace=`gh cs list | grep "$1" | head -n 1 | awk '{print $1}'`
+	# Find the first available codespace that matches the given pattern
+	codespace=`gh cs list | grep "$1" | head -n 1 | awk '{print $1}'`
 
-# If no codespace is found, then exit
-if [ -z "$codespace" ]; then
-		echo "No codespace found"
-		exit 1
-fi
+	# If no codespace is found, then exit
+	if [ -z "$codespace" ]; then
+			echo "No codespace found"
+			exit 1
+	fi
+}
 
 kill_port_forwarding() {
 		ps ax | grep "gh cs ports forward 80:80" | grep -v grep | awk '{print $1}' | sudo xargs kill
@@ -23,6 +25,7 @@ kill_port_forwarding() {
 }
 
 forward_port() {
+		get_codespace_name
 		if [ "$EUID" -ne 0 ]
 				then echo "Please run as root"
 				exit
@@ -50,6 +53,8 @@ if [ -z "$1" ]; then
 		echo "  -k: Kill the port forwarding process"
 		exit 1
 fi
+
+get_codespace_name
 
 # Connect to the codespace
 echo "Attempting to connect to codespace $codespace"
