@@ -1,14 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
 get_codespace_name() {
-	# Get the first argument that isn't an option
-	while [ $# -gt 0 ]; do
-			case "$1" in
-					-*) shift ;;
-					*)  break ;;
-			esac
-	done
-
 	echo "Attempting to get codespace name from '$1'"
 
 	# Find the first available codespace that matches the given pattern
@@ -25,7 +17,7 @@ get_codespace_name() {
 
 kill_port_forwarding() {
 		echo "Killing port forwarding"
-		ps ax | grep "gh cs ports forward 80:80" | grep -v grep | awk '{print $1}' | sudo xargs kill
+		ps ax | grep "gh cs ports forward 80:80" | grep -v grep | awk '{print $1}' | xargs kill -9
 		echo "Killed port forwarding"
 		exit 0
 }
@@ -42,7 +34,7 @@ forward_port() {
 		exit 0
 }
 
-while getopts ":k:p" opt; do
+while getopts "kp" opt; do
 		case $opt in
 				k)
 						kill_port_forwarding
@@ -62,7 +54,7 @@ if [ -z "$1" ]; then
 		exit 1
 fi
 
-get_codespace_name
+get_codespace_name "$1"
 
 # Connect to the codespace
 echo "Attempting to connect to codespace $codespace"
