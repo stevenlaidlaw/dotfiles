@@ -11,8 +11,8 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# OSX Only stuff
 if [[ "$CODESPACES" != "true" ]]; then
+	# OSX Only stuff
 	. /opt/homebrew/opt/asdf/libexec/asdf.sh
 	export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 fi
@@ -41,6 +41,7 @@ alias gsta='git stash apply'
 alias pushall='git add . && git commit -m "`date`" && git push'
 
 export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Copilot CLI Shortcuts (??, git?, gh?)
+eval "$(github-copilot-cli alias -- "$0")"
 

@@ -100,10 +100,10 @@ cnoreabbrev Qall qall
 " ############
 
 nnoremap <silent> <C-p> :GitFiles<CR>
-nnoremap <silent> <C-S-p> :Files<CR>
+nnoremap <silent> <C-P> :Files<CR>
 nnoremap <silent> <C-k> :Buffers<CR>
-nnoremap <silent> <C-S-f> :Ag<CR>
-nnoremap <silent> <C-S-t> :term<CR>
+nnoremap <silent> <C-F> :Ag<CR>
+nnoremap <silent> <C-T> :term<CR>
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " ###############
