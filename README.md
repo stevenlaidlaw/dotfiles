@@ -21,3 +21,6 @@
 
 1. Run `./install.sh`
 2. Set your default node version to latest
+
+
+stevenlaidlaw/dotfiles/commit/3cb69ec90360e887a328fc0620e5b89c9ea4e90c => stevenlaidlaw/dotfiles/commit/2a37b187beea9f2cd7f69c086e87f8c40693e1f5
