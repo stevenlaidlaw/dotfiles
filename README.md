@@ -1,8 +1,7 @@
 # Setting up a new system
 
-[stevenlaidlaw/dotfiles/compare/30146fe..2989992](stevenlaidlaw/dotfiles/compare/30146fe..2989992)
-
-[stevenlaidlaw/dotfiles/compare/30146fe...2989992](stevenlaidlaw/dotfiles/compare/30146fe...2989992)
+- [stevenlaidlaw/dotfiles/compare/30146fe..2989992](stevenlaidlaw/dotfiles/compare/30146fe..2989992)
+- [stevenlaidlaw/dotfiles/compare/30146fe...2989992](stevenlaidlaw/dotfiles/compare/30146fe...2989992)
 
 ## Applications
 
