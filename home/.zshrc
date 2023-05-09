@@ -15,6 +15,9 @@ if [[ "$CODESPACES" != "true" ]]; then
 	# OSX Only stuff
 	. /opt/homebrew/opt/asdf/libexec/asdf.sh
 	export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
+
+	# Copilot CLI Shortcuts (??, git?, gh?)
+	eval "$(github-copilot-cli alias -- "$0")"
 fi
 
 function session() {
@@ -42,6 +45,4 @@ alias pushall='git add . && git commit -m "`date`" && git push'
 
 export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
 
-# Copilot CLI Shortcuts (??, git?, gh?)
-eval "$(github-copilot-cli alias -- "$0")"
 
