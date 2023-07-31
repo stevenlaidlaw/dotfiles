@@ -44,5 +44,6 @@ alias gsta='git stash apply'
 alias pushall='git add . && git commit -m "`date`" && git push'
 
 export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
+export GITHUB_TOKEN=$(security find-internet-password -a stevenlaidlaw -s github.com -l 'gh token' -w)
 
 
