@@ -25,7 +25,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 Plug 'github/copilot.vim' " Copilot integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'APZelos/blamer.nvim' " Git blame
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' } " Ruby Solargraph LSP
+"Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' } " Ruby Solargraph LSP
 Plug 'rhysd/vim-grammarous' " Grammar checker
 Plug 'preservim/nerdtree' " File explorer
 Plug 'ryanoasis/vim-devicons' " Icons
@@ -126,9 +126,9 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 " COC Extensions
-let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-html', 'coc-java', 'coc-go', 'coc-sql', 'coc-tsserver', 'coc-clangd', 'coc-python', 'coc-css']
+" let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-html', 'coc-java', 'coc-go', 'coc-sql', 'coc-tsserver', 'coc-clangd', 'coc-python', 'coc-css']
 " COC Map return to accept
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " ##############
