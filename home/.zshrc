@@ -2,12 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="custom"
 DISABLE_UPDATE_PROMPT="true"
-
-if [[ "$CODESPACES" != "true" ]]; then
-	plugins=(asdf zsh-autosuggestions)
-else
-	plugins=(asdf)
-fi
+plugins=(asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,6 +35,7 @@ alias gps='git push'
 alias gbr='git branch'
 alias gst='git stash'
 alias gsta='git stash apply'
+alias gpm='git pull --rebase origin master'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 

@@ -43,22 +43,22 @@ function decor() {
 }
 
 function get_aws_vault_and_region() {
-  # if [[ "$AWS_VAULT" = "" ]]; then
-  #   return
-  # else
-  #   echo " %{$FG[006]%}$AWS_VAULT | $AWS_REGION"
-  # fi
+  if [[ "$AWS_VAULT" = "" ]]; then
+    return
+  else
+    echo " %{$FG[006]%}$AWS_VAULT | $AWS_REGION"
+  fi
 }
 
 function get_aws_profile() {
-  # C1="%{$FG[005]%}"
-  # C2="%{$FG[005]%}"
-  # echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
+  C1="%{$FG[005]%}"
+  C2="%{$FG[005]%}"
+  echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
 }
 
 function get_codespaces_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then
-    echo "%B$(color brightyellow)codespace $(decor \]━━\[) "
+    echo "%B$(color brightyellow)codespace $CODESPACE_NAME\n"
   fi
 }
 
@@ -71,6 +71,7 @@ function my_git_prompt_info() {
   [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS" # add a space if there is a status
   echo " $(decor \]━━\[) %B$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(color brightred)$GIT_STATUS"
 }
+
 # Must use Powerline font, for \uE0A0 to render.
 ZSH_THEME_GIT_PROMPT_PREFIX="$(color brightgreen)\uE0A0"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
@@ -82,8 +83,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Left prompt
 PROMPT='
-$(decor ┏━\[) $(get_codespaces_prompt)$(color brightblue)%B%~$(my_git_prompt_info) $(decor \])
-$(decor ┗━━━❯❯) '
+$(get_codespaces_prompt)$(color brightblue)%B%~$(my_git_prompt_info)
+$(decor $) '
+
+#PROMPT='
+#$(decor ┏━\[) $(get_codespaces_prompt)$(color brightblue)%B%~$(my_git_prompt_info) $(decor \])
+#$(decor ┗━❯) '
 
 # Right prompt
 RPROMPT=""
