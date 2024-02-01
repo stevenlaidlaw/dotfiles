@@ -69,7 +69,7 @@ function my_git_prompt_info() {
 		GIT_STATUS=$(git_prompt_status)
 	fi
   [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS" # add a space if there is a status
-  echo " $(decor \]━━\[) %B$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(color brightred)$GIT_STATUS"
+  echo " %B$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(color brightred)$GIT_STATUS"
 }
 
 # Must use Powerline font, for \uE0A0 to render.
@@ -85,10 +85,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 PROMPT='
 $(get_codespaces_prompt)$(color brightblue)%B%~$(my_git_prompt_info)
 $(decor $) '
-
-#PROMPT='
-#$(decor ┏━\[) $(get_codespaces_prompt)$(color brightblue)%B%~$(my_git_prompt_info) $(decor \])
-#$(decor ┗━❯) '
 
 # Right prompt
 RPROMPT=""
