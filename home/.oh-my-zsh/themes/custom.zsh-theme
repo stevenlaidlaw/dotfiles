@@ -59,7 +59,7 @@ function get_aws_profile() {
 function get_codespaces_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then
     echo "%B$(color brightyellow)codespace $CODESPACE_NAME"
-    printf "\n"
+		echo -n "\n"
   fi
 }
 
