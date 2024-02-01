@@ -83,7 +83,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Left prompt
 PROMPT='
-$(get_codespaces_prompt)$(color brightblue)%B%~$(my_git_prompt_info)
+$(get_codespaces_prompt)
+$(color brightblue)%B%~$(my_git_prompt_info)
 $(decor $) '
 
 # Right prompt
