@@ -58,7 +58,7 @@ function get_aws_profile() {
 
 function get_codespaces_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then
-    echo "%B$(color brightyellow)codespace $CODESPACE_NAME%{%k%}"
+    PROMPT+="%B$(color brightyellow)codespace $CODESPACE_NAME"
   fi
 }
 
@@ -83,8 +83,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Left prompt
 PROMPT='
+'
 $(get_codespaces_prompt)
-$(color brightblue)%B%~$(my_git_prompt_info)
+PROMPT+='$(color brightblue)%B%~$(my_git_prompt_info)
 $(decor $) '
 
 # Right prompt
