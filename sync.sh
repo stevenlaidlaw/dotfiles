@@ -1,9 +1,7 @@
-# Local
-cp ~/.oh-my-zsh/themes/custom.zsh-theme local/home/.oh-my-zsh/themes/custom.zsh-theme
-cp ~/.zshrc local/home/.zshrc
-cp ~/.vimrc local/home/.vimrc
-cp -r ~/.config/kitty local/home/.config/
+# Get local files and put them in this repo
 
-# Codespaces
-cp ~/.zshrc .zshrc
-cp ~/.oh-my-zsh/themes/custom.zsh-theme .oh-my-zsh/themes/custom.zsh-theme
+files_array=(~/.oh-my-zsh/themes/custom.zsh-theme ~/.zshrc ~/.vimrc ~/.config/kitty ~/.fonts)
+
+for file in ${files_array[@]}; do
+  rsync -aivP $file home/
+done

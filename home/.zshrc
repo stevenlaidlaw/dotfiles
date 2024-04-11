@@ -15,14 +15,6 @@ if [[ "$CODESPACES" != "true" ]]; then
 	eval "$(github-copilot-cli alias -- "$0")"
 fi
 
-function session() {
-	local cwd=$(pwd)
-	local cwd=${cwd:1} # remove leading slash
-	local cwd=${cwd//\//_} # replace slashes with underscores
-	local session_file="~/.sessions/$cwd"
-	vim -S $session_file
-}
-
 alias ll='ls -lah'
 alias bat='bat --theme=gruvbox-dark -P'
 alias gcl='git clone'
@@ -38,8 +30,3 @@ alias gsta='git stash apply'
 alias gpm='git pull --rebase origin master'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
-
-export PATH="$HOME/workspace/stevenlaidlaw/dotfiles/scripts/:$PATH"
-#export GITHUB_TOKEN=$(security find-internet-password -a stevenlaidlaw -s github.com -l 'gh token' -w)
-
-

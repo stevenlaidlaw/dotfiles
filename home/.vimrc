@@ -128,21 +128,11 @@ let g:prettier#autoformat_require_pragma = 0
 " COC Extensions
 " let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-html', 'coc-java', 'coc-go', 'coc-sql', 'coc-tsserver', 'coc-clangd', 'coc-python', 'coc-css']
 " COC Map return to accept
-" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " ##############
 " USER FUNCTIONS
 " ##############
-
-" Auto save session on exit
-function! SaveSession()
-  let cwd_path = substitute(substitute(getcwd(), '\/', '_', 'g'), '_', '', '')
-  execute 'mksession! ~/.sessions/' . cwd_path
-endfunction
-
-" Call SaveSession() on exit
-autocmd VimLeave * call SaveSession()
 
 " Remove background color on startup
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
