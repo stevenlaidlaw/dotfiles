@@ -10,9 +10,6 @@ if [[ "$CODESPACES" != "true" ]]; then
 	# OSX Only stuff
 	. /opt/homebrew/opt/asdf/libexec/asdf.sh
 	export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
-
-	# Copilot CLI Shortcuts (??, git?, gh?)
-	eval "$(github-copilot-cli alias -- "$0")"
 fi
 
 alias ll='ls -lah'
