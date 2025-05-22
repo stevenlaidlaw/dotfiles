@@ -1,60 +1,62 @@
 function color() {
-  if [[ "$1" = "black" ]]; then
-    echo $FG[000]
+  if [[ "$1" = "reset" ]]; then
+    echo "%{$reset_color%}"
+  elif [[ "$1" = "black" ]]; then
+    echo "%{$FG[000]%}"
   elif [[ "$1" = "red" ]]; then
-    echo $FG[001]
+    echo "%{$FG[001]%}"
   elif [[ "$1" = "green" ]]; then
-    echo $FG[002]
+    echo "%{$FG[002]%}"
   elif [[ "$1" = "yellow" ]]; then
-    echo $FG[003]
+    echo "%{$FG[003]%}"
   elif [[ "$1" = "blue" ]]; then
-    echo $FG[004]
+    echo "%{$FG[004]%}"
   elif [[ "$1" = "magenta" ]]; then
-    echo $FG[005]
+    echo "%{$FG[005]%}"
   elif [[ "$1" = "cyan" ]]; then
-    echo $FG[006]
+    echo "%{$FG[006]%}"
   elif [[ "$1" = "white" ]]; then
-    echo $FG[007]
+    echo "%{$FG[007]%}"
   elif [[ "$1" = "gray" ]]; then
-    echo $FG[008]
+    echo "%{$FG[008]%}"
   elif [[ "$1" = "brightred" ]]; then
-    echo $FG[009]
+    echo "%{$FG[009]%}"
   elif [[ "$1" = "brightgreen" ]]; then
-    echo $FG[010]
+    echo "%{$FG[010]%}"
   elif [[ "$1" = "brightyellow" ]]; then
-    echo $FG[011]
+    echo "%{$FG[011]%}"
   elif [[ "$1" = "brightblue" ]]; then
-    echo $FG[012]
+    echo "%{$FG[012]%}"
   elif [[ "$1" = "brightmagenta" ]]; then
-    echo $FG[013]
+    echo "%{$FG[013]%}"
   elif [[ "$1" = "brightcyan" ]]; then
-    echo $FG[014]
+    echo "%{$FG[014]%}"
   elif [[ "$1" = "brightwhite" ]]; then
-    echo $FG[015]
+    echo "%{$FG[015]%}"
   fi
 }
 
 function reset() {
-  echo $reset_color
+  echo $(color reset)
 }
 
 function decor() {
   echo "$(color brightmagenta)%B$1$(reset)"
 }
 
-function get_aws_vault_and_region() {
-  if [[ "$AWS_VAULT" = "" ]]; then
-    return
-  else
-    echo " %{$FG[006]%}$AWS_VAULT | $AWS_REGION"
-  fi
-}
+# function get_aws_vault_and_region() {
+#   if [[ "$AWS_VAULT" = "" ]]; then
+#     return
+#   else
+#     echo " $(color cyan)$AWS_VAULT | $AWS_REGION"
+#   fi
+# }
 
-function get_aws_profile() {
-  C1="%{$FG[005]%}"
-  C2="%{$FG[005]%}"
-  echo " :$C1$AWS_PROFILE%{$reset_color%}:$C1$AWS_REGION"
-}
+# function get_aws_profile() {
+#   C1="$(color magenta)"
+#   C2="$(color magenta)"
+#   echo " :$C1$AWS_PROFILE$(color reset):$C1$AWS_REGION"
+# }
 
 function get_codespaces_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then

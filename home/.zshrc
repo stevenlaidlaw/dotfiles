@@ -6,9 +6,8 @@ plugins=(asdf)
 source $ZSH/oh-my-zsh.sh
 
 if [[ "$CODESPACES" != "true" ]]; then
-	# Local stuff only (MacOS specific)
-	. /opt/homebrew/opt/asdf/libexec/asdf.sh
 	export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
+	export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
 
 # Git config stuff
