@@ -8,7 +8,10 @@ source $ZSH/oh-my-zsh.sh
 if [[ "$CODESPACES" != "true" ]]; then
 	export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 	export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+	export PATH="MGFXC_WINE_PATH=$HOME/.winemonogame:$PATH"
 fi
+
+PATH="$PATH:$GOPATH/bin"
 
 # Git config stuff
 git config --global pager.branch false
