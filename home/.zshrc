@@ -11,6 +11,10 @@ if [[ "$CODESPACES" != "true" ]]; then
 	export PATH="MGFXC_WINE_PATH=$HOME/.winemonogame:$PATH"
 fi
 
+if [[ "$GITHUB_REPOSITORY" == "github/github" ]]; then
+  export GIT_TRACE_PERFORMANCE=1
+fi
+
 PATH="$PATH:$GOPATH/bin"
 
 # Git config stuff
