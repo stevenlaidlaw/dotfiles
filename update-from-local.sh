@@ -4,7 +4,6 @@ files_array=(
   .oh-my-zsh/themes/custom.zsh-theme
   .zshrc
   .vimrc
-  .config/kitty/
   .fonts/
   workspace/update-all.sh
 )

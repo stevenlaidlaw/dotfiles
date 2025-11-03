@@ -25,6 +25,8 @@ for dir in */; do
       echo "$dir $(color "$(git rev-parse --abbrev-ref HEAD)" 33) $update_status"
     ) &
     pids+=($!)
+  else
+    echo "$dir $(color "Not a git repository" 31)"
   fi
 done
 
