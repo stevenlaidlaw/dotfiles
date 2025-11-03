@@ -6,6 +6,7 @@ files_array=(
   .vimrc
   .config/kitty/
   .fonts/
+  workspace/update-all.sh
 )
 
 for file in ${files_array[@]}; do

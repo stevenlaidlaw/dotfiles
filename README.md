@@ -2,7 +2,6 @@
 
 ## Applications
 
-- [kitty](https://sw.kovidgoyal.net/kitty)/[alacritty](https://github.com/alacritty/alacritty) - Terminal emulator
 - [zsh](https://www.zsh.org/) - shell
 - [oh-my-zsh](https://ohmyz.sh/) - zsh helper
 - [tldr](https://github.com/tldr-pages/tldr) - Simplified man pages
