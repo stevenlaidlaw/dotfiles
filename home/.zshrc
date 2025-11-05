@@ -15,7 +15,7 @@ if [[ "$GITHUB_REPOSITORY" == "github/github" ]]; then
   export GIT_TRACE_PERFORMANCE=1
 fi
 
-PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Git config stuff
 git config --global pager.branch false
