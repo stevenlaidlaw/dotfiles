@@ -34,3 +34,6 @@ alias gfo='git fetch origin'
 alias gmo='git merge origin/master'
 
 alias pushall='git add . && git commit -m "`date`" && git push'
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
