@@ -12,8 +12,21 @@ if [[ "$CODESPACES" != "true" ]]; then
 fi
 
 if [[ "$GITHUB_REPOSITORY" == "github/github" ]]; then
-  export GIT_TRACE_PERFORMANCE=1
+	export GIT_TRACE_PERFORMANCE=1
 fi
+
+# Disable zsh vcs_info/git prompt in the github/github repo (large history causes slowdowns)
+chpwd_disable_git_prompt() {
+	if [[ "$PWD" == "$HOME/workspace/github/github"* ]]; then
+		git config --global oh-my-zsh.hide-status 1
+		git config --global oh-my-zsh.hide-dirty 1
+	else
+		git config --global --unset oh-my-zsh.hide-status 2>/dev/null
+		git config --global --unset oh-my-zsh.hide-dirty 2>/dev/null
+	fi
+}
+chpwd_functions+=(chpwd_disable_git_prompt)
+chpwd_disable_git_prompt  # run once at shell startup
 
 export PATH="$PATH:$(go env GOPATH)/bin"
 
@@ -24,14 +37,15 @@ git config --global pager.branch false
 alias ll='ls -lah'
 alias bat='bat --theme=gruvbox-dark -P'
 
-alias gb='git branch'
-alias gc='git checkout'
-alias gf='git fetch'
+alias gbr='git branch'
+alias gco='git checkout'
+alias gfe='git fetch'
 alias gcm='git commit -m'
 alias gpl='git pull'
 alias gps='git push'
 alias gfo='git fetch origin'
 alias gmo='git merge origin/master'
+alias gitclean="git branch | grep -v '^\*' | xargs git branch -D"
 
 alias pushall='git add . && git commit -m "`date`" && git push'
 
