@@ -44,20 +44,6 @@ function decor() {
   echo "$(color brightmagenta)%B$1$(reset)"
 }
 
-# function get_aws_vault_and_region() {
-#   if [[ "$AWS_VAULT" = "" ]]; then
-#     return
-#   else
-#     echo " $(color cyan)$AWS_VAULT | $AWS_REGION"
-#   fi
-# }
-
-# function get_aws_profile() {
-#   C1="$(color magenta)"
-#   C2="$(color magenta)"
-#   echo " :$C1$AWS_PROFILE$(color reset):$C1$AWS_REGION"
-# }
-
 function get_codespaces_prompt() {
   if [[ "$CODESPACES" = "true" ]]; then
     PROMPT+="%B$(color brightyellow)codespace$(reset)$(color brightyellow) $CODESPACE_NAME
@@ -67,10 +53,7 @@ function get_codespaces_prompt() {
 
 function my_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-	GIT_STATUS=""
-  if [[ "$CODESPACES" != "true" ]]; then
-		GIT_STATUS=$(git_prompt_status)
-	fi
+  GIT_STATUS=$(_omz_git_prompt_status)
   [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS" # add a space if there is a status
   echo " %B$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(color brightred)$GIT_STATUS"
 }
